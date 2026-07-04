@@ -1,0 +1,2 @@
+import{o as l,c as r,t as s,n,j as c}from"./vue-BjXwtkjl.js";const b={__name:"StatusBadge",props:{label:{type:String,required:!0}},setup(t){const e=t,a=c(()=>e.label==="Out of Stock"?"bg-zinc-800 text-zinc-400":e.label==="Check Availability"?"bg-amber-500/10 text-amber-300":e.label==="Usually Dispatched in 2–3 Days"?"bg-blue-500/10 text-blue-300":"bg-red-500/10 text-red-200");return(i,o)=>(l(),r("span",{class:n([a.value,"inline-flex rounded-full px-3 py-1 text-xs font-bold"])},s(t.label),3))}};export{b as _};
+//# sourceMappingURL=StatusBadge--F-yDfhz.js.map
