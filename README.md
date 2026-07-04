@@ -1,4 +1,4 @@
-# PakAuto Gear
+# Neon LEDs
 
 Production-ready Vue 3 + Firebase e-commerce starter for a Pakistan car accessories business where orders are confirmed with vendors before payment.
 
