@@ -20,6 +20,20 @@
         <p class="mt-3 text-sm text-zinc-400">Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad and nationwide courier support.</p>
       </div>
     </div>
+
+     <div class="relative border-t border-cyan-800/30 mt-12 pt-6 text-center text-gray-500 text-sm z-10">
+      © {{ new Date().getFullYear() }}
+      <a
+        href="https://aqil-lab.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white hover:text-red-400 transition font-semibold"
+      >
+        AqilLabs
+      </a>
+      — All Rights Reserved.
+    </div>
+    &nbsp;
   </footer>
 </template>
 
