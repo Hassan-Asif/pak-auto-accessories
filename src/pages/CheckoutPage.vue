@@ -1,7 +1,7 @@
 <template>
   <main class="container-page py-12">
     <h1 class="text-4xl font-black">Checkout</h1>
-    <p class="mt-3 text-red-100">Do not send payment until our team confirms vendor availability on WhatsApp.</p>
+    <!-- <p class="mt-3 text-red-100">Do not send payment until our team confirms vendor availability on WhatsApp.</p> -->
     <form class="mt-8 grid gap-8 lg:grid-cols-[1fr_360px]" @submit.prevent="placeOrder">
       <section class="grid gap-4 rounded-lg border border-zinc-800 bg-zinc-950 p-5">
         <div class="grid gap-4 sm:grid-cols-2">

@@ -4,7 +4,7 @@
       <img :src="product.images?.[0]" :alt="product.name" loading="lazy" class="aspect-[4/3] w-full object-cover" />
     </RouterLink>
     <div class="space-y-2 p-3">
-      <StatusBadge :label="product.availabilityStatus" />
+      <!-- <StatusBadge :label="product.availabilityStatus" /> -->
       <div>
         <p class="text-xs uppercase text-zinc-500">{{ product.category }} · {{ product.carBrand }}</p>
         <p class="text-red-500 text-xs"></p>
@@ -12,9 +12,9 @@
       </div>
       <div class="flex items-center justify-between">
         <p class="text-base sm:text-lg font-black">Rs {{ Number(product.sellingPrice || product.price).toLocaleString() }}</p>
-        <button class="btn-secondary px-3 py-2" :disabled="product.availabilityStatus === 'Out of Stock'" @click="cart.add(product)">
+        <!-- <button class="btn-secondary px-3 py-2" :disabled="product.availabilityStatus === 'Out of Stock'" @click="cart.add(product)">
           Add
-        </button>
+        </button> -->
       </div>
     </div>
   </article>

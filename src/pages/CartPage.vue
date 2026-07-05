@@ -10,7 +10,7 @@
           <img :src="item.image" :alt="item.name" class="h-24 w-24 rounded-md object-cover" />
           <div>
             <h2 class="font-bold">{{ item.name }}</h2>
-            <p class="mt-1 text-sm text-zinc-400">{{ item.availabilityStatus }}</p>
+            <!-- <p class="mt-1 text-sm text-zinc-400">{{ item.availabilityStatus }}</p> -->
             <button class="mt-3 text-sm text-red-200" @click="cart.remove(item.id)">Remove</button>
           </div>
           <div class="flex items-center gap-3">

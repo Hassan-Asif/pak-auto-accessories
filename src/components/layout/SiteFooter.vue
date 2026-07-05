@@ -3,7 +3,9 @@
     <div class="container-page grid gap-8 py-12 md:grid-cols-4">
       <div>
         <p class="text-lg font-black">Neon<span class="text-brake">LEDs</span></p>
-        <p class="mt-3 text-sm text-zinc-400">Vendor-confirmed car accessories for Pakistan. No payment before availability confirmation.</p>
+        <p class="mt-3 text-sm text-zinc-400">
+Your trusted destination for premium car accessories, lighting, styling, and car care products.
+</p>
       </div>
       <div>
         <h3 class="font-bold">Shop</h3>
@@ -23,6 +25,8 @@
 
      <div class="relative border-t border-cyan-800/30 mt-12 pt-6 text-center text-gray-500 text-sm z-10">
       © {{ new Date().getFullYear() }}
+      <a class="text-white">NeonLEDs. </a>
+        All Rights Reserved. Design And Developed By
       <a
         href="https://aqil-lab.vercel.app"
         target="_blank"
@@ -31,7 +35,6 @@
       >
         AqilLabs
       </a>
-      — All Rights Reserved.
     </div>
     &nbsp;
   </footer>

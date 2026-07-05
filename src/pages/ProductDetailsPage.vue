@@ -9,14 +9,14 @@
       </div>
     </div>
     <section>
-      <StatusBadge :label="product.availabilityStatus" />
+      <!-- <StatusBadge :label="product.availabilityStatus" /> -->
       <h1 class="mt-4 text-4xl font-black">{{ product.name }}</h1>
       <p class="mt-3 text-zinc-400">{{ product.carBrand }} {{ product.carModel }} · {{ product.category }}</p>
       <p class="mt-6 text-3xl font-black">Rs {{ Number(product.sellingPrice || product.price).toLocaleString() }}</p>
       <p class="mt-5 leading-7 text-zinc-300">{{ product.description }}</p>
-      <div class="mt-6 rounded-lg border border-red-900/60 bg-red-950/20 p-4 text-sm text-red-100">
+      <!-- <div class="mt-6 rounded-lg border border-red-900/60 bg-red-950/20 p-4 text-sm text-red-100">
         Payment is never requested before vendor availability is confirmed on WhatsApp.
-      </div>
+      </div> -->
       <p class="mt-4 text-sm text-zinc-400">Estimated delivery: {{ product.estimatedDelivery }}</p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <button class="btn-primary" :disabled="product.availabilityStatus === 'Out of Stock'" @click="cart.add(product)">Add to Cart</button>
