@@ -13,9 +13,9 @@
             <a :href="supportMessage('I want help choosing car accessories')" class="btn-secondary" target="_blank" rel="noopener">WhatsApp Support</a>
           </div>
           <div class="mt-10 grid grid-cols-3 gap-4 text-sm text-zinc-300">
-            <div><strong class="block text-2xl text-white">0</strong> Pre-confirmation payments</div>
-            <div><strong class="block text-2xl text-white">2-3</strong> Day usual dispatch</div>
-            <div><strong class="block text-2xl text-white">PK</strong> Nationwide delivery</div>
+            <!-- <div><strong class="block text-2xl text-white">0</strong> Pre-confirmation payments</div> -->
+            <!-- <div><strong class="block text-2xl text-white">2-3</strong> Day usual dispatch</div> -->
+            <!-- <div><strong class="block text-2xl text-white">PK</strong> Nationwide delivery</div> -->
           </div>
         </div>
       </div>

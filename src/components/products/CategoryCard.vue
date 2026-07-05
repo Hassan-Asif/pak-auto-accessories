@@ -4,7 +4,7 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
     <div class="absolute bottom-0 p-5">
       <h3 class="text-xl font-black">{{ category.name }}</h3>
-      <p class="mt-1 text-sm text-zinc-300">Check models and WhatsApp availability</p>
+      <p class="mt-1 text-sm text-zinc-300"></p>
     </div>
   </RouterLink>
 </template>

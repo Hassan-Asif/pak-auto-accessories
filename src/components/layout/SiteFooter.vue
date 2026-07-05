@@ -13,11 +13,11 @@
       <div>
         <h3 class="font-bold">Support</h3>
         <a class="mt-3 block text-sm text-zinc-400" :href="supportMessage('I want to confirm a product before payment')" target="_blank" rel="noopener">WhatsApp Confirmation</a>
-        <p class="mt-2 text-sm text-zinc-400">COD, Easypaisa, JazzCash, Bank Transfer after confirmation.</p>
+        <p class="mt-2 text-sm text-zinc-400">COD, Easypaisa, JazzCash, Bank Transfer.</p>
       </div>
       <div>
         <h3 class="font-bold">Delivery</h3>
-        <p class="mt-3 text-sm text-zinc-400">Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad and nationwide courier support.</p>
+        <p class="mt-3 text-sm text-zinc-400">Karachi Pakistan.</p>
       </div>
     </div>
 

@@ -77,25 +77,26 @@ export const useProductStore = defineStore('products', {
     featuredProducts: (state) => state.products.filter((product) => product.isFeatured && product.isActive !== false).slice(0, 6)
   },
   actions: {
-    async fetchProducts(filters = {}) {
-      this.loading = true
-      this.error = null
-      try {
-        if (!firebaseReady) {
-          this.products = fallbackProducts
-          return
-        }
-        const constraints = [where('isActive', '==', true), orderBy('createdAt', 'desc')]
-        if (filters.category) constraints.unshift(where('category', '==', filters.category))
-        const snap = await getDocs(query(collection(db, 'products'), ...constraints, limit(60)))
-        this.products = snap.docs.map((entry) => ({ id: entry.id, ...entry.data() }))
-      } catch (error) {
-        this.error = error.message
-        this.products = fallbackProducts
-      } finally {
-        this.loading = false
-      }
-    },
+   async fetchProducts(filters = {}) {
+  this.loading = true
+  this.error = null
+
+  try {
+    const snap = await getDocs(collection(db, 'products'))
+
+    console.log("Products:", snap.size)
+
+    this.products = snap.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+  } catch (error) {
+    console.error(error)
+    this.error = error.message
+  } finally {
+    this.loading = false
+  }
+},
     async fetchAdminProducts() {
       this.loading = true
       try {

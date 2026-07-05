@@ -7,6 +7,7 @@
       <StatusBadge :label="product.availabilityStatus" />
       <div>
         <p class="text-xs uppercase text-zinc-500">{{ product.category }} · {{ product.carBrand }}</p>
+        <p class="text-red-500 text-xs"></p>
         <RouterLink :to="`/products/${product.id}`" class="mt-1 block font-bold hover:text-red-200">{{ product.name }}</RouterLink>
       </div>
       <div class="flex items-center justify-between">
@@ -23,6 +24,13 @@
 import StatusBadge from '../shared/StatusBadge.vue'
 import { useCartStore } from '../../stores/cart'
 
-defineProps({ product: { type: Object, required: true } })
+const props = defineProps({
+  product: {
+    type: Object,
+    required: true
+  }
+})
+
+console.log("CARD PRODUCT", props.product)
 const cart = useCartStore()
 </script>

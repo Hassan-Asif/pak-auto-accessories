@@ -32,6 +32,7 @@ const productStore = useProductStore()
 const filters = reactive({ category: route.query.category || '', brand: '', model: '' })
 
 const filteredProducts = computed(() => productStore.activeProducts.filter((product) => {
+  
   return (!filters.category || product.category === filters.category)
     && (!filters.brand || product.carBrand?.toLowerCase().includes(filters.brand.toLowerCase()))
     && (!filters.model || product.carModel?.toLowerCase().includes(filters.model.toLowerCase()))
