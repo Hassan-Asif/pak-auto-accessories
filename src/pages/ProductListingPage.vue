@@ -29,15 +29,52 @@ import { useProductStore } from '../stores/products'
 
 const route = useRoute()
 const productStore = useProductStore()
-const filters = reactive({ category: route.query.category || '', brand: '', model: '' })
 
-const filteredProducts = computed(() => productStore.activeProducts.filter((product) => {
-  
-  return (!filters.category || product.category === filters.category)
-    && (!filters.brand || product.carBrand?.toLowerCase().includes(filters.brand.toLowerCase()))
-    && (!filters.model || product.carModel?.toLowerCase().includes(filters.model.toLowerCase()))
-}))
+const filters = reactive({
+  category: route.query.category || '',
+  brand: '',
+  model: '',
+  search: route.query.search || ''
+})
 
-watch(() => filters.category, () => productStore.fetchProducts({ category: filters.category }))
-onMounted(() => productStore.fetchProducts({ category: filters.category }))
+// Keep search/category synced with URL
+watch(
+  () => route.query,
+  (query) => {
+    filters.category = query.category || ''
+    filters.search = query.search || ''
+  },
+  { immediate: true }
+)
+
+const filteredProducts = computed(() => {
+  return productStore.activeProducts.filter((product) => {
+    const matchesSearch =
+      !filters.search ||
+      product.name?.toLowerCase().includes(filters.search.toLowerCase()) ||
+      product.category?.toLowerCase().includes(filters.search.toLowerCase()) ||
+      product.carBrand?.toLowerCase().includes(filters.search.toLowerCase()) ||
+      product.carModel?.toLowerCase().includes(filters.search.toLowerCase())
+
+    return (
+      matchesSearch &&
+      (!filters.category || product.category === filters.category) &&
+      (!filters.brand ||
+        product.carBrand?.toLowerCase().includes(filters.brand.toLowerCase())) &&
+      (!filters.model ||
+        product.carModel?.toLowerCase().includes(filters.model.toLowerCase()))
+    )
+  })
+})
+
+watch(
+  () => filters.category,
+  () => {
+    productStore.fetchProducts({ category: filters.category })
+  }
+)
+
+onMounted(() => {
+  productStore.fetchProducts({ category: filters.category })
+})
 </script>

@@ -24,15 +24,56 @@
       </div>
     </section>
   </main>
+  <section
+  v-if="relatedProducts.length"
+  class="container-page py-16"
+>
+  <div class="mb-8 flex items-end justify-between">
+    <div>
+      <h2 class="text-3xl font-black">
+        You May Also Like
+      </h2>
+      <p class="mt-2 text-zinc-400">
+        Discover more products similar to this one.
+      </p>
+    </div>
+
+    <RouterLink
+      to="/products"
+      class="hidden rounded-lg border border-red-600 px-5 py-2 text-sm font-semibold text-red-200 transition hover:bg-red-600 hover:text-white sm:inline-flex"
+    >
+      View All Products →
+    </RouterLink>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+    <ProductCard
+      v-for="item in relatedProducts.slice(0, 4)"
+      :key="item.id"
+      :product="item"
+    />
+  </div>
+
+  <!-- Mobile Button -->
+  <div class="mt-8 flex justify-center sm:hidden">
+    <RouterLink
+      to="/products"
+      class="btn-primary px-6 py-3"
+    >
+      View All Products
+    </RouterLink>
+  </div>
+</section>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import StatusBadge from '../components/shared/StatusBadge.vue'
 import { useCartStore } from '../stores/cart'
 import { useProductStore } from '../stores/products'
 import { productInquiry } from '../utils/whatsapp'
+import ProductCard from '../components/products/ProductCard.vue'
 
 const route = useRoute()
 const productStore = useProductStore()
@@ -40,7 +81,22 @@ const cart = useCartStore()
 const product = ref(null)
 const selectedImage = ref('')
 
+const relatedProducts = computed(() => {
+  if (!product.value) return []
+
+  return productStore.activeProducts
+    .filter(item =>
+      item.id !== product.value.id &&
+      item.category === product.value.category
+    )
+    .slice(0, 4)
+})
+
 onMounted(async () => {
+  if (!productStore.products.length) {
+    await productStore.fetchProducts()
+  }
+
   product.value = await productStore.fetchProduct(route.params.id)
   selectedImage.value = product.value?.images?.[0]
 })
