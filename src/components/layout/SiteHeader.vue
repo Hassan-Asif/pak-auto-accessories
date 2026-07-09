@@ -1,78 +1,148 @@
 <template>
-  <header class="sticky top-0 z-40 border-b border-zinc-800 bg-ink/90 backdrop-blur">
-    <nav class="container-page flex h-16 items-center justify-between gap-4">
+  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
+    <nav class="container-page flex h-20 items-center justify-between">
 
       <!-- Logo -->
-      <RouterLink to="/" class="text-lg font-black tracking-wide">
-        Neon<span class="text-brake">LEDs</span>
+      <RouterLink
+        to="/"
+        class="text-2xl font-black tracking-tight text-zinc-900"
+      >
+        Neon<span class="text-zinc-400">LEDs</span>
       </RouterLink>
 
-      <!-- Search (Desktop) -->
-      <div class="hidden flex-1 md:flex md:justify-center">
+      <!-- Desktop Navigation -->
+      <div class="hidden items-center gap-8 lg:flex">
+
+        <RouterLink
+          to="/"
+          class="font-medium text-zinc-700 transition hover:text-black"
+        >
+          Home
+        </RouterLink>
+
+        <RouterLink
+          to="/products"
+          class="font-medium text-zinc-700 transition hover:text-black"
+        >
+          Products
+        </RouterLink>
+
+        <RouterLink
+          to="/categories"
+          class="font-medium text-zinc-700 transition hover:text-black"
+        >
+          Categories
+        </RouterLink>
+
+      </div>
+
+      <!-- Search -->
+      <div class="hidden w-full max-w-md lg:block">
+
         <input
           v-model="search"
           @keyup.enter="goToSearch"
           type="text"
           placeholder="Search products..."
-          class="w-full max-w-md rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm text-white placeholder:text-zinc-500 focus:border-brake focus:outline-none"
+          class="w-full rounded-xl border border-zinc-300 bg-zinc-50 px-5 py-3 text-sm outline-none transition focus:border-black"
         />
+
       </div>
 
-      <!-- Desktop Links -->
-      <div class="hidden items-center gap-6 md:flex">
-        <RouterLink to="/categories" class="text-sm text-zinc-300 hover:text-white">Categories</RouterLink>
-        <RouterLink to="/products" class="text-sm text-zinc-300 hover:text-white">Products</RouterLink>
+      <!-- Right Side -->
+      <div class="hidden items-center gap-4 lg:flex">
 
-        <RouterLink to="/cart" class="relative text-m text-zinc-300 hover:text-white">
+        <div
+          v-if="selectedVehicle"
+          class="rounded-xl border border-green-300 bg-green-50 px-4 py-2 text-sm text-green-700"
+        >
+          🚗 {{ selectedVehicle.displayName }}
+        </div>
+
+        <RouterLink
+          to="/cart"
+          class="relative flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-300 transition hover:bg-zinc-100"
+        >
           🛒
+
           <span
             v-if="cart.count"
-            class="absolute -right-3 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-brake text-[10px] font-bold text-white"
+            class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-black text-[10px] font-bold text-white"
           >
             {{ cart.count }}
           </span>
+
         </RouterLink>
 
-        <!-- <RouterLink class="btn-primary py-2" to="/products">
+        <RouterLink
+          to="/products"
+          class="rounded-xl bg-black px-6 py-3 font-semibold text-white transition hover:bg-zinc-800"
+        >
           Shop Now
-        </RouterLink> -->
+        </RouterLink>
+
       </div>
 
-      <!-- Mobile Hamburger -->
+      <!-- Mobile Button -->
       <button
-        class="flex flex-col gap-1 md:hidden"
+        class="flex flex-col gap-1 lg:hidden"
         @click="open = !open"
       >
-        <span class="h-0.5 w-6 bg-white"></span>
-        <span class="h-0.5 w-6 bg-white"></span>
-        <span class="h-0.5 w-6 bg-white"></span>
+        <span class="h-0.5 w-6 bg-black"></span>
+        <span class="h-0.5 w-6 bg-black"></span>
+        <span class="h-0.5 w-6 bg-black"></span>
       </button>
+
     </nav>
 
     <!-- Mobile Menu -->
     <div
       v-if="open"
-      class="border-t border-zinc-800 bg-ink p-4 md:hidden"
+      class="border-t border-zinc-200 bg-white lg:hidden"
     >
-      <input
-        v-model="search"
-        @keyup.enter="goToSearch"
-        type="text"
-        placeholder="Search products..."
-        class="mb-4 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm text-white"
-      />
 
-      <div class="flex flex-col gap-4">
-        <RouterLink @click="open = false" to="/categories">Categories</RouterLink>
-        <RouterLink @click="open = false" to="/products">Products</RouterLink>
-        <RouterLink @click="open = false" to="/cart">
-          Cart ({{ cart.count }})
-        </RouterLink>
-        <!-- <RouterLink @click="open = false" class="btn-primary text-center py-2" to="/products">
-          Shop Now
-        </RouterLink> -->
+      <div class="container-page py-5">
+
+        <input
+          v-model="search"
+          @keyup.enter="goToSearch"
+          type="text"
+          placeholder="Search products..."
+          class="mb-5 w-full rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3"
+        />
+
+        <div class="flex flex-col gap-5">
+
+          <RouterLink @click="open = false" to="/">
+            Home
+          </RouterLink>
+
+          <RouterLink @click="open = false" to="/products">
+            Products
+          </RouterLink>
+
+          <RouterLink @click="open = false" to="/categories">
+            Categories
+          </RouterLink>
+
+          <RouterLink @click="open = false" to="/cart">
+            Cart ({{ cart.count }})
+          </RouterLink>
+
+          <RouterLink
+            @click="open = false"
+            to="/products"
+            class="rounded-xl bg-black py-3 text-center font-semibold text-white"
+          >
+            Shop Now
+          </RouterLink>
+
+        </div>
+
       </div>
+
     </div>
+
   </header>
 </template>
 
@@ -86,10 +156,15 @@ const search = ref('')
 const cart = useCartStore()
 const router = useRouter()
 
+// Remove this if you aren't using a vehicle selector yet.
+const selectedVehicle = null
+
 function goToSearch() {
   router.push({
     path: '/products',
-    query: { search: search.value }
+    query: {
+      search: search.value
+    }
   })
 
   open.value = false

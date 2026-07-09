@@ -87,9 +87,9 @@ export const useProductStore = defineStore('products', {
     console.log("Products:", snap.size)
 
     this.products = snap.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }))
+  ...doc.data(),
+  id: doc.id
+}))
   } catch (error) {
     console.error(error)
     this.error = error.message
@@ -105,7 +105,10 @@ export const useProductStore = defineStore('products', {
           return
         }
         const snap = await getDocs(query(collection(db, 'products'), orderBy('createdAt', 'desc')))
-        this.products = snap.docs.map((entry) => ({ id: entry.id, ...entry.data() }))
+        this.products = snap.docs.map(entry => ({
+  ...entry.data(),
+  id: entry.id
+}))
       } finally {
         this.loading = false
       }
@@ -116,25 +119,53 @@ export const useProductStore = defineStore('products', {
       if (id.startsWith('demo-')) return fallbackProducts.find((product) => product.id === id)
       if (!firebaseReady) return null
       const snap = await getDoc(doc(db, 'products', id))
-      return snap.exists() ? { id: snap.id, ...snap.data() } : null
+      return snap.exists()
+  ? {
+      ...snap.data(),
+      id: snap.id
+    }
+  : null
     },
-    async saveProduct(product) {
-      if (!firebaseReady) throw new Error('Firebase is not configured.')
-      const payload = {
-        ...product,
-        price: Number(product.sellingPrice || product.price || 0),
-        sellingPrice: Number(product.sellingPrice || product.price || 0),
-        vendorPrice: Number(product.vendorPrice || 0),
-        profit: Number(product.sellingPrice || 0) - Number(product.vendorPrice || 0),
-        updatedAt: serverTimestamp()
-      }
-      if (product.id) {
-        await updateDoc(doc(db, 'products', product.id), payload)
-        return product.id
-      }
-      const created = await addDoc(collection(db, 'products'), { ...payload, createdAt: serverTimestamp() })
-      return created.id
-    },
+   async saveProduct(product) {
+  if (!firebaseReady)
+    throw new Error('Firebase is not configured.')
+
+  // Extract id so it is NOT saved inside Firestore
+  const { id, ...productData } = product
+
+  const payload = {
+    ...productData,
+
+    compatibleVehicles: product.compatibleVehicles || [],
+
+    price: Number(product.sellingPrice || product.price || 0),
+    sellingPrice: Number(product.sellingPrice || product.price || 0),
+    vendorPrice: Number(product.vendorPrice || 0),
+
+    profit:
+      Number(product.sellingPrice || 0) -
+      Number(product.vendorPrice || 0),
+
+    updatedAt: serverTimestamp()
+  }
+
+  // Update existing product
+  if (id) {
+    await updateDoc(doc(db, 'products', id), payload)
+    return id
+  }
+
+  // Create new product
+  const created = await addDoc(
+    collection(db, 'products'),
+    {
+      ...payload,
+      createdAt: serverTimestamp()
+    }
+  )
+
+  return created.id
+},
     async deleteProduct(id) {
       if (!firebaseReady) throw new Error('Firebase is not configured.')
       await deleteDoc(doc(db, 'products', id))

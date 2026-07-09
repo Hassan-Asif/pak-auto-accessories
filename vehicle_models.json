@@ -1,0 +1,66 @@
+[
+  { "id": "corolla", "brand": "Toyota", "name": "Corolla" },
+  { "id": "yaris", "brand": "Toyota", "name": "Yaris" },
+  { "id": "corolla-cross", "brand": "Toyota", "name": "Corolla Cross" },
+  { "id": "fortuner", "brand": "Toyota", "name": "Fortuner" },
+  { "id": "hilux", "brand": "Toyota", "name": "Hilux" },
+  { "id": "prado", "brand": "Toyota", "name": "Prado" },
+  { "id": "land-cruiser", "brand": "Toyota", "name": "Land Cruiser" },
+  { "id": "camry", "brand": "Toyota", "name": "Camry" },
+  { "id": "vitz", "brand": "Toyota", "name": "Vitz" },
+  { "id": "passo", "brand": "Toyota", "name": "Passo" },
+  { "id": "aqua", "brand": "Toyota", "name": "Aqua" },
+  { "id": "prius", "brand": "Toyota", "name": "Prius" },
+  { "id": "raize", "brand": "Toyota", "name": "Raize" },
+  { "id": "rush", "brand": "Toyota", "name": "Rush" },
+
+  { "id": "civic", "brand": "Honda", "name": "Civic" },
+  { "id": "city", "brand": "Honda", "name": "City" },
+  { "id": "br-v", "brand": "Honda", "name": "BR-V" },
+  { "id": "hr-v", "brand": "Honda", "name": "HR-V" },
+  { "id": "cr-v", "brand": "Honda", "name": "CR-V" },
+  { "id": "vezel", "brand": "Honda", "name": "Vezel" },
+  { "id": "accord", "brand": "Honda", "name": "Accord" },
+  { "id": "fit", "brand": "Honda", "name": "Fit" },
+  { "id": "grace", "brand": "Honda", "name": "Grace" },
+
+  { "id": "alto", "brand": "Suzuki", "name": "Alto" },
+  { "id": "cultus", "brand": "Suzuki", "name": "Cultus" },
+  { "id": "swift", "brand": "Suzuki", "name": "Swift" },
+  { "id": "wagon-r", "brand": "Suzuki", "name": "Wagon R" },
+  { "id": "mehran", "brand": "Suzuki", "name": "Mehran" },
+
+  { "id": "elantra", "brand": "Hyundai", "name": "Elantra" },
+  { "id": "sonata", "brand": "Hyundai", "name": "Sonata" },
+  { "id": "tucson", "brand": "Hyundai", "name": "Tucson" },
+  { "id": "santa-fe", "brand": "Hyundai", "name": "Santa Fe" },
+
+  { "id": "sportage", "brand": "KIA", "name": "Sportage" },
+  { "id": "stonic", "brand": "KIA", "name": "Stonic" },
+  { "id": "picanto", "brand": "KIA", "name": "Picanto" },
+  { "id": "sorento", "brand": "KIA", "name": "Sorento" },
+  { "id": "carnival", "brand": "KIA", "name": "Carnival" },
+
+  { "id": "alsvin", "brand": "Changan", "name": "Alsvin" },
+  { "id": "oshan-x7", "brand": "Changan", "name": "Oshan X7" },
+  { "id": "m9", "brand": "Changan", "name": "M9" },
+
+  { "id": "hs", "brand": "MG", "name": "HS" },
+  { "id": "zs", "brand": "MG", "name": "ZS" },
+  { "id": "zs-ev", "brand": "MG", "name": "ZS EV" },
+  { "id": "mg4", "brand": "MG", "name": "MG4" },
+
+  { "id": "x70", "brand": "Proton", "name": "X70" },
+  { "id": "x50", "brand": "Proton", "name": "X50" },
+  { "id": "saga", "brand": "Proton", "name": "Saga" },
+
+  { "id": "glory-580", "brand": "DFSK", "name": "Glory 580" },
+  { "id": "glory-500", "brand": "DFSK", "name": "Glory 500" },
+  { "id": "k01", "brand": "DFSK", "name": "K01" },
+  { "id": "c31", "brand": "DFSK", "name": "C31" },
+
+  { "id": "mira", "brand": "Daihatsu", "name": "Mira" },
+  { "id": "move", "brand": "Daihatsu", "name": "Move" },
+  { "id": "cast", "brand": "Daihatsu", "name": "Cast" }
+
+]

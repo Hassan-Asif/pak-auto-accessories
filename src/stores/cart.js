@@ -17,13 +17,21 @@ export const useCartStore = defineStore('cart', {
       if (existing) existing.quantity += quantity
       else {
         this.items.push({
-          id: product.id,
-          name: product.name,
-          price: Number(product.sellingPrice || product.price),
-          image: product.images?.[0],
-          availabilityStatus: product.availabilityStatus,
-          quantity
-        })
+
+  id: product.id,
+
+  name: product.name,
+
+  price: Number(product.sellingPrice || product.price),
+
+  image: product.images?.[0],
+
+  compatibleVehicles:
+    product.compatibleVehicles || [],
+
+  quantity
+
+})
       }
       this.persist()
     },

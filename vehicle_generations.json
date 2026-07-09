@@ -1,0 +1,897 @@
+[
+  
+  {
+    "id": "toyota-corolla-2002-2008",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "modelId": "corolla",
+    "year": "2002-2008",
+    "displayName": "Corolla (2002-2008)"
+  },
+  {
+    "id": "toyota-corolla-2009-2011",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "modelId": "corolla",
+    "year": "2009-2011",
+    "displayName": "Corolla (2009-2013)"
+  },
+
+  {
+    "id": "toyota-corolla-2014-2017",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "modelId": "corolla",
+    "year": "2014-2017",
+    "displayName": "Corolla (2014-2017)"
+  },
+  {
+    "id": "toyota-corolla-2018-2020",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "modelId": "corolla",
+    "year": "2018-2020",
+    "displayName": "Corolla (2018-2020)"
+  },
+  {
+    "id": "toyota-corolla-2021-2023",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "modelId": "corolla",
+    "year": "2021-2023",
+    "displayName": "Corolla (2021-2023)"
+  },
+  {
+    "id": "toyota-corolla-2024-present",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "modelId": "corolla",
+    "year": "2024-Present",
+    "displayName": "Corolla (2024-Present)"
+  },
+
+  {
+    "id": "toyota-yaris-2020-present",
+    "brand": "Toyota",
+    "model": "Yaris",
+    "modelId": "yaris",
+    "year": "2020-Present",
+    "displayName": "Yaris (2020-Present)"
+  },
+
+  {
+    "id": "toyota-corolla-cross-2023-present",
+    "brand": "Toyota",
+    "model": "Corolla Cross",
+    "modelId": "corolla-cross",
+    "year": "2023-Present",
+    "displayName": "Corolla Cross (2023-Present)"
+  },
+
+  {
+    "id": "toyota-fortuner-2005-2015",
+    "brand": "Toyota",
+    "model": "Fortuner",
+    "modelId": "fortuner",
+    "year": "2005-2015",
+    "displayName": "Fortuner (2005-2015)"
+  },
+  {
+    "id": "toyota-fortuner-2016-2020",
+    "brand": "Toyota",
+    "model": "Fortuner",
+    "modelId": "fortuner",
+    "year": "2016-2020",
+    "displayName": "Fortuner (2016-2020)"
+  },
+  {
+    "id": "toyota-fortuner-2021-present",
+    "brand": "Toyota",
+    "model": "Fortuner",
+    "modelId": "fortuner",
+    "year": "2021-Present",
+    "displayName": "Fortuner (2021-Present)"
+  },
+
+  {
+    "id": "toyota-hilux-2005-2011",
+    "brand": "Toyota",
+    "model": "Hilux",
+    "modelId": "hilux",
+    "year": "2005-2011",
+    "displayName": "Hilux (2005-2011)"
+  },
+  {
+    "id": "toyota-hilux-2012-2015",
+    "brand": "Toyota",
+    "model": "Hilux",
+    "modelId": "hilux",
+    "year": "2012-2015",
+    "displayName": "Hilux (2012-2015)"
+  },
+  {
+    "id": "toyota-hilux-2016-2020",
+    "brand": "Toyota",
+    "model": "Hilux",
+    "modelId": "hilux",
+    "year": "2016-2020",
+    "displayName": "Hilux Revo (2016-2020)"
+  },
+  {
+    "id": "toyota-hilux-2021-present",
+    "brand": "Toyota",
+    "model": "Hilux",
+    "modelId": "hilux",
+    "year": "2021-Present",
+    "displayName": "Hilux Revo (2021-Present)"
+  },
+
+  {
+    "id": "toyota-prado-2003-2009",
+    "brand": "Toyota",
+    "model": "Prado",
+    "modelId": "prado",
+    "year": "2003-2009",
+    "displayName": "Prado (2003-2009)"
+  },
+  {
+    "id": "toyota-prado-2010-2013",
+    "brand": "Toyota",
+    "model": "Prado",
+    "modelId": "prado",
+    "year": "2010-2013",
+    "displayName": "Prado (2010-2013)"
+  },
+  {
+    "id": "toyota-prado-2014-2017",
+    "brand": "Toyota",
+    "model": "Prado",
+    "modelId": "prado",
+    "year": "2014-2017",
+    "displayName": "Prado (2014-2017)"
+  },
+  {
+    "id": "toyota-prado-2018-2023",
+    "brand": "Toyota",
+    "model": "Prado",
+    "modelId": "prado",
+    "year": "2018-2023",
+    "displayName": "Prado (2018-2023)"
+  },
+
+  {
+    "id": "toyota-land-cruiser-2008-2015",
+    "brand": "Toyota",
+    "model": "Land Cruiser",
+    "modelId": "land-cruiser",
+    "year": "2008-2015",
+    "displayName": "Land Cruiser (2008-2015)"
+  },
+  {
+    "id": "toyota-land-cruiser-2016-2021",
+    "brand": "Toyota",
+    "model": "Land Cruiser",
+    "modelId": "land-cruiser",
+    "year": "2016-2021",
+    "displayName": "Land Cruiser (2016-2021)"
+  },
+  {
+    "id": "toyota-land-cruiser-2022-present",
+    "brand": "Toyota",
+    "model": "Land Cruiser",
+    "modelId": "land-cruiser",
+    "year": "2022-Present",
+    "displayName": "Land Cruiser 300 (2022-Present)"
+  },
+
+  {
+    "id": "toyota-prius-2004-2009",
+    "brand": "Toyota",
+    "model": "Prius",
+    "modelId": "prius",
+    "year": "2004-2009",
+    "displayName": "Prius (2004-2009)"
+  },
+  {
+    "id": "toyota-prius-2010-2015",
+    "brand": "Toyota",
+    "model": "Prius",
+    "modelId": "prius",
+    "year": "2010-2015",
+    "displayName": "Prius (2010-2015)"
+  },
+  {
+    "id": "toyota-prius-2016-2022",
+    "brand": "Toyota",
+    "model": "Prius",
+    "modelId": "prius",
+    "year": "2016-2022",
+    "displayName": "Prius (2016-2022)"
+  },
+
+  {
+    "id": "toyota-aqua-2012-2021",
+    "brand": "Toyota",
+    "model": "Aqua",
+    "modelId": "aqua",
+    "year": "2012-2021",
+    "displayName": "Aqua (2012-2021)"
+  },
+  {
+    "id": "toyota-aqua-2022-present",
+    "brand": "Toyota",
+    "model": "Aqua",
+    "modelId": "aqua",
+    "year": "2022-Present",
+    "displayName": "Aqua (2022-Present)"
+  },
+
+
+  {
+    "id": "toyota-vitz-2005-2010",
+    "brand": "Toyota",
+    "model": "Vitz",
+    "modelId": "vitz",
+    "year": "2005-2010",
+    "displayName": "Vitz (2005-2010)"
+  },
+  {
+    "id": "toyota-vitz-2011-2014",
+    "brand": "Toyota",
+    "model": "Vitz",
+    "modelId": "vitz",
+    "year": "2011-2014",
+    "displayName": "Vitz (2011-2014)"
+  },
+  {
+    "id": "toyota-vitz-2015-2020",
+    "brand": "Toyota",
+    "model": "Vitz",
+    "modelId": "vitz",
+    "year": "2015-2020",
+    "displayName": "Vitz (2015-2020)"
+  },
+
+  {
+    "id": "toyota-passo-2004-2010",
+    "brand": "Toyota",
+    "model": "Passo",
+    "modelId": "passo",
+    "year": "2004-2010",
+    "displayName": "Passo (2004-2010)"
+  },
+  {
+    "id": "toyota-passo-2010-2016",
+    "brand": "Toyota",
+    "model": "Passo",
+    "modelId": "passo",
+    "year": "2010-2016",
+    "displayName": "Passo (2010-2016)"
+  },
+  {
+    "id": "toyota-passo-2016-present",
+    "brand": "Toyota",
+    "model": "Passo",
+    "modelId": "passo",
+    "year": "2016-Present",
+    "displayName": "Passo (2016-Present)"
+  },
+
+  {
+    "id": "toyota-raize-2020-present",
+    "brand": "Toyota",
+    "model": "Raize",
+    "modelId": "raize",
+    "year": "2020-Present",
+    "displayName": "Raize (2020-Present)"
+  },
+
+
+  {
+    "id": "honda-civic-1996-2000",
+    "brand": "Honda",
+    "model": "Civic",
+    "modelId": "civic",
+    "year": "1996-2000",
+    "displayName": "Civic (1996-2000)"
+  },
+  {
+    "id": "honda-civic-2001-2005",
+    "brand": "Honda",
+    "model": "Civic",
+    "modelId": "civic",
+    "year": "2001-2005",
+    "displayName": "Civic (2001-2005)"
+  },
+  {
+    "id": "honda-civic-2006-2012",
+    "brand": "Honda",
+    "model": "Civic",
+    "modelId": "civic",
+    "year": "2006-2012",
+    "displayName": "Civic Reborn (2006-2012)"
+  },
+  {
+    "id": "honda-civic-2013-2016",
+    "brand": "Honda",
+    "model": "Civic",
+    "modelId": "civic",
+    "year": "2013-2016",
+    "displayName": "Civic (2013-2016)"
+  },
+  {
+    "id": "honda-civic-2016-2021",
+    "brand": "Honda",
+    "model": "Civic",
+    "modelId": "civic",
+    "year": "2016-2021",
+    "displayName": "Civic X (2016-2021)"
+  },
+  {
+    "id": "honda-civic-2022-present",
+    "brand": "Honda",
+    "model": "Civic",
+    "modelId": "civic",
+    "year": "2022-Present",
+    "displayName": "Civic XI (2022-Present)"
+  },
+
+
+  {
+    "id": "honda-city-2003-2008",
+    "brand": "Honda",
+    "model": "City",
+    "modelId": "city",
+    "year": "2003-2008",
+    "displayName": "City i-DSI/Vario (2003-2008)"
+  },
+  {
+    "id": "honda-city-2009-2021",
+    "brand": "Honda",
+    "model": "City",
+    "modelId": "city",
+    "year": "2009-2021",
+    "displayName": "City (2009-2021)"
+  },
+  {
+    "id": "honda-city-2021-present",
+    "brand": "Honda",
+    "model": "City",
+    "modelId": "city",
+    "year": "2021-Present",
+    "displayName": "All-New City (2021-Present)"
+  },
+
+  {
+    "id": "honda-brv-2017-2021",
+    "brand": "Honda",
+    "model": "BR-V",
+    "modelId": "br-v",
+    "year": "2017-2021",
+    "displayName": "BR-V (2017-2021)"
+  },
+  {
+    "id": "honda-brv-2022-present",
+    "brand": "Honda",
+    "model": "BR-V",
+    "modelId": "br-v",
+    "year": "2022-Present",
+    "displayName": "BR-V (2022-Present)"
+  },
+
+  {
+    "id": "honda-hrv-2016-2021",
+    "brand": "Honda",
+    "model": "HR-V",
+    "modelId": "hr-v",
+    "year": "2016-2021",
+    "displayName": "HR-V (2016-2021)"
+  },
+  {
+    "id": "honda-hrv-2022-present",
+    "brand": "Honda",
+    "model": "HR-V",
+    "modelId": "hr-v",
+    "year": "2022-Present",
+    "displayName": "HR-V (2022-Present)"
+  },
+
+
+
+  {
+    "id": "honda-accord-2003-2008",
+    "brand": "Honda",
+    "model": "Accord",
+    "modelId": "accord",
+    "year": "2003-2008",
+    "displayName": "Accord (2003-2008)"
+  },
+  {
+    "id": "honda-accord-2009-2013",
+    "brand": "Honda",
+    "model": "Accord",
+    "modelId": "accord",
+    "year": "2009-2013",
+    "displayName": "Accord (2009-2013)"
+  },
+  {
+    "id": "honda-accord-2014-2017",
+    "brand": "Honda",
+    "model": "Accord",
+    "modelId": "accord",
+    "year": "2014-2017",
+    "displayName": "Accord (2014-2017)"
+  },
+  {
+    "id": "honda-accord-2018-present",
+    "brand": "Honda",
+    "model": "Accord",
+    "modelId": "accord",
+    "year": "2018-Present",
+    "displayName": "Accord (2018-Present)"
+  },
+
+  {
+    "id": "honda-vezel-2014-2021",
+    "brand": "Honda",
+    "model": "Vezel",
+    "modelId": "vezel",
+    "year": "2014-2021",
+    "displayName": "Vezel (2014-2021)"
+  },
+  {
+    "id": "honda-vezel-2022-present",
+    "brand": "Honda",
+    "model": "Vezel",
+    "modelId": "vezel",
+    "year": "2022-Present",
+    "displayName": "Vezel (2022-Present)"
+  },
+
+  {
+    "id": "honda-fit-2002-2007",
+    "brand": "Honda",
+    "model": "Fit",
+    "modelId": "fit",
+    "year": "2002-2007",
+    "displayName": "Fit (2002-2007)"
+  },
+  {
+    "id": "honda-fit-2008-2013",
+    "brand": "Honda",
+    "model": "Fit",
+    "modelId": "fit",
+    "year": "2008-2013",
+    "displayName": "Fit (2008-2013)"
+  },
+  {
+    "id": "honda-fit-2014-2020",
+    "brand": "Honda",
+    "model": "Fit",
+    "modelId": "fit",
+    "year": "2014-2020",
+    "displayName": "Fit (2014-2020)"
+  },
+
+  {
+    "id": "honda-grace-2014-2020",
+    "brand": "Honda",
+    "model": "Grace",
+    "modelId": "grace",
+    "year": "2014-2020",
+    "displayName": "Grace (2014-2020)"
+  },
+
+  {
+    "id": "honda-freed-2008-2016",
+    "brand": "Honda",
+    "model": "Freed",
+    "modelId": "freed",
+    "year": "2008-2016",
+    "displayName": "Freed (2008-2016)"
+  },
+  {
+    "id": "honda-freed-2017-present",
+    "brand": "Honda",
+    "model": "Freed",
+    "modelId": "freed",
+    "year": "2017-Present",
+    "displayName": "Freed (2017-Present)"
+  },
+
+  {
+    "id": "suzuki-alto-2000-2012",
+    "brand": "Suzuki",
+    "model": "Alto",
+    "modelId": "alto",
+    "year": "2000-2012",
+    "displayName": "Alto (2000-2012)"
+  },
+  {
+    "id": "suzuki-alto-2019-present",
+    "brand": "Suzuki",
+    "model": "Alto",
+    "modelId": "alto",
+    "year": "2019-Present",
+    "displayName": "Alto (2019-Present)"
+  },
+
+  {
+    "id": "suzuki-cultus-2000-2007",
+    "brand": "Suzuki",
+    "model": "Cultus",
+    "modelId": "cultus",
+    "year": "2000-2007",
+    "displayName": "Cultus (2000-2007)"
+  },
+  {
+    "id": "suzuki-cultus-2008-2016",
+    "brand": "Suzuki",
+    "model": "Cultus",
+    "modelId": "cultus",
+    "year": "2008-2016",
+    "displayName": "Cultus (2008-2016)"
+  },
+  {
+    "id": "suzuki-cultus-2017-present",
+    "brand": "Suzuki",
+    "model": "Cultus",
+    "modelId": "cultus",
+    "year": "2017-Present",
+    "displayName": "Cultus (2017-Present)"
+  },
+
+  {
+    "id": "suzuki-wagonr-2014-present",
+    "brand": "Suzuki",
+    "model": "Wagon R",
+    "modelId": "wagon-r",
+    "year": "2014-Present",
+    "displayName": "Wagon R (2014-Present)"
+  },
+
+  {
+    "id": "suzuki-swift-2010-2017",
+    "brand": "Suzuki",
+    "model": "Swift",
+    "modelId": "swift",
+    "year": "2010-2017",
+    "displayName": "Swift (2010-2017)"
+  },
+  {
+    "id": "suzuki-swift-2018-2021",
+    "brand": "Suzuki",
+    "model": "Swift",
+    "modelId": "swift",
+    "year": "2018-2021",
+    "displayName": "Swift (2018-2021)"
+  },
+  {
+    "id": "suzuki-swift-2022-present",
+    "brand": "Suzuki",
+    "model": "Swift",
+    "modelId": "swift",
+    "year": "2022-Present",
+    "displayName": "Swift (2022-Present)"
+  },
+
+  {
+    "id": "suzuki-mehran-1989-2019",
+    "brand": "Suzuki",
+    "model": "Mehran",
+    "modelId": "mehran",
+    "year": "1989-2019",
+    "displayName": "Mehran (1989-2019)"
+  },
+
+  {
+    "id": "suzuki-liana-2006-2017",
+    "brand": "Suzuki",
+    "model": "Liana",
+    "modelId": "liana",
+    "year": "2006-2017",
+    "displayName": "Liana (2006-2017)"
+  },
+
+  {
+    "id": "suzuki-jimny-1998-2017",
+    "brand": "Suzuki",
+    "model": "Jimny",
+    "modelId": "jimny",
+    "year": "1998-2017",
+    "displayName": "Jimny (1998-2017)"
+  },
+  {
+    "id": "suzuki-jimny-2018-present",
+    "brand": "Suzuki",
+    "model": "Jimny",
+    "modelId": "jimny",
+    "year": "2018-Present",
+    "displayName": "Jimny (2018-Present)"
+  },
+  {
+    "id": "suzuki-hustler-2014-2019",
+    "brand": "Suzuki",
+    "model": "Hustler",
+    "modelId": "hustler",
+    "year": "2014-2019",
+    "displayName": "Hustler (2014-2019)"
+  },
+  {
+    "id": "suzuki-hustler-2020-present",
+    "brand": "Suzuki",
+    "model": "Hustler",
+    "modelId": "hustler",
+    "year": "2020-Present",
+    "displayName": "Hustler (2020-Present)"
+  },
+  {
+    "id": "hyundai-tucson-2020-2024",
+    "brand": "Hyundai",
+    "model": "Tucson",
+    "modelId": "tucson",
+    "year": "2020-2024",
+    "displayName": "Tucson (2020-2024)"
+  },
+  {
+    "id": "hyundai-tucson-2025-present",
+    "brand": "Hyundai",
+    "model": "Tucson",
+    "modelId": "tucson",
+    "year": "2025-Present",
+    "displayName": "Tucson Facelift (2025-Present)"
+  },
+  {
+    "id": "hyundai-sonata-2021-present",
+    "brand": "Hyundai",
+    "model": "Sonata",
+    "modelId": "sonata",
+    "year": "2021-Present",
+    "displayName": "Sonata (2021-Present)"
+  },
+  {
+    "id": "hyundai-elantra-2021-present",
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "modelId": "elantra",
+    "year": "2021-Present",
+    "displayName": "Elantra (2021-Present)"
+  },
+
+  {
+    "id": "kia-picanto-2019-present",
+    "brand": "KIA",
+    "model": "Picanto",
+    "modelId": "picanto",
+    "year": "2019-Present",
+    "displayName": "Picanto (2019-Present)"
+  },
+  {
+    "id": "kia-stonic-2021-present",
+    "brand": "KIA",
+    "model": "Stonic",
+    "modelId": "stonic",
+    "year": "2021-Present",
+    "displayName": "Stonic (2021-Present)"
+  },
+  {
+    "id": "kia-sportage-2019-2022",
+    "brand": "KIA",
+    "model": "Sportage",
+    "modelId": "sportage",
+    "year": "2019-2022",
+    "displayName": "Sportage QL (2019-2022)"
+  },
+  {
+    "id": "kia-sportage-2023-present",
+    "brand": "KIA",
+    "model": "Sportage",
+    "modelId": "sportage",
+    "year": "2023-Present",
+    "displayName": "Sportage NQ5 (2023-Present)"
+  },
+  {
+    "id": "kia-sorento-2021-present",
+    "brand": "KIA",
+    "model": "Sorento",
+    "modelId": "sorento",
+    "year": "2021-Present",
+    "displayName": "Sorento (2021-Present)"
+  },
+  {
+    "id": "kia-carnival-2021-present",
+    "brand": "KIA",
+    "model": "Carnival",
+    "modelId": "carnival",
+    "year": "2021-Present",
+    "displayName": "Carnival (2021-Present)"
+  },
+
+  {
+    "id": "changan-alsvin-2021-present",
+    "brand": "Changan",
+    "model": "Alsvin",
+    "modelId": "alsvin",
+    "year": "2021-Present",
+    "displayName": "Alsvin (2021-Present)"
+  },
+
+  {
+    "id": "changan-oshan-x7-2022-2024",
+    "brand": "Changan",
+    "model": "Oshan X7",
+    "modelId": "oshan-x7",
+    "year": "2022-2024",
+    "displayName": "Oshan X7 (2022-2024)"
+  },
+  {
+    "id": "changan-oshan-x7-facelift-2025-present",
+    "brand": "Changan",
+    "model": "Oshan X7",
+    "modelId": "oshan-x7",
+    "year": "2025-Present",
+    "displayName": "Oshan X7 Facelift (2025-Present)"
+  },
+
+  {
+    "id": "mg-hs-2021-2024",
+    "brand": "MG",
+    "model": "HS",
+    "modelId": "hs",
+    "year": "2021-2024",
+    "displayName": "HS (2021-2024)"
+  },
+  {
+    "id": "mg-hs-phev-2022-present",
+    "brand": "MG",
+    "model": "HS PHEV",
+    "modelId": "hs-phev",
+    "year": "2022-Present",
+    "displayName": "HS Plug-in Hybrid (2022-Present)"
+  },
+  {
+    "id": "mg-zs-2021-2023",
+    "brand": "MG",
+    "model": "ZS",
+    "modelId": "zs",
+    "year": "2021-2023",
+    "displayName": "ZS (2021-2023)"
+  },
+  {
+    "id": "mg-zs-ev-2021-present",
+    "brand": "MG",
+    "model": "ZS EV",
+    "modelId": "zs-ev",
+    "year": "2021-Present",
+    "displayName": "ZS EV (2021-Present)"
+  },
+
+
+  {
+    "id": "proton-saga-2021-present",
+    "brand": "Proton",
+    "model": "Saga",
+    "modelId": "saga",
+    "year": "2021-Present",
+    "displayName": "Saga (2021-Present)"
+  },
+  {
+    "id": "proton-x70-2021-2024",
+    "brand": "Proton",
+    "model": "X70",
+    "modelId": "x70",
+    "year": "2021-2024",
+    "displayName": "X70 (2021-2024)"
+  },
+  {
+    "id": "proton-x70-2025-present",
+    "brand": "Proton",
+    "model": "X70",
+    "modelId": "x70",
+    "year": "2025-Present",
+    "displayName": "X70 Facelift (2025-Present)"
+  },
+
+  {
+    "id": "dfsk-glory-580-2020-present",
+    "brand": "DFSK",
+    "model": "Glory 580",
+    "modelId": "glory-580",
+    "year": "2020-Present",
+    "displayName": "Glory 580 (2020-Present)"
+  },
+  {
+    "id": "dfsk-glory-500-2022-present",
+    "brand": "DFSK",
+    "model": "Glory 500",
+    "modelId": "glory-500",
+    "year": "2022-Present",
+    "displayName": "Glory 500 (2022-Present)"
+  },
+  {
+    "id": "dfsk-k01h-2019-present",
+    "brand": "DFSK",
+    "model": "K01H",
+    "modelId": "k01h",
+    "year": "2019-Present",
+    "displayName": "K01H Pickup (2019-Present)"
+  },
+  {
+    "id": "dfsk-c31-2020-present",
+    "brand": "DFSK",
+    "model": "C31",
+    "modelId": "c31",
+    "year": "2020-Present",
+    "displayName": "C31 (2020-Present)"
+  },
+  {
+    "id": "dfsk-c32-2020-present",
+    "brand": "DFSK",
+    "model": "C32",
+    "modelId": "c32",
+    "year": "2020-Present",
+    "displayName": "C32 (2020-Present)"
+  },
+
+  {
+    "id": "daihatsu-mira-2007-2013",
+    "brand": "Daihatsu",
+    "model": "Mira",
+    "modelId": "mira",
+    "year": "2007-2013",
+    "displayName": "Mira (2007-2013)"
+  },
+  {
+    "id": "daihatsu-mira-2014-2018",
+    "brand": "Daihatsu",
+    "model": "Mira",
+    "modelId": "mira",
+    "year": "2014-2018",
+    "displayName": "Mira (2014-2018)"
+  },
+  {
+    "id": "daihatsu-move-2010-present",
+    "brand": "Daihatsu",
+    "model": "Move",
+    "modelId": "move",
+    "year": "2010-Present",
+    "displayName": "Move (2010-Present)"
+  },
+
+
+
+
+
+  {
+    "id": "byd-atto3-2024-present",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "modelId": "atto3",
+    "year": "2024-Present",
+    "displayName": "Atto 3 (2024-Present)"
+  },
+  {
+    "id": "byd-seal-2024-present",
+    "brand": "BYD",
+    "model": "Seal",
+    "modelId": "seal",
+    "year": "2024-Present",
+    "displayName": "Seal (2024-Present)"
+  },
+  {
+    "id": "byd-sealion7-2025-present",
+    "brand": "BYD",
+    "model": "Sealion 7",
+    "modelId": "sealion7",
+    "year": "2025-Present",
+    "displayName": "Sealion 7 (2025-Present)"
+  },
+  {
+    "id": "byd-shark6-2025-present",
+    "brand": "BYD",
+    "model": "Shark 6",
+    "modelId": "shark6",
+    "year": "2025-Present",
+    "displayName": "Shark 6 (2025-Present)"
+  }
+]
