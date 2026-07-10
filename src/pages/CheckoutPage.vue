@@ -29,7 +29,7 @@
         <!-- LEFT -->
 
         <section
-          class="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm"
+          class="rounded-3xl border border-zinc-300 bg-white p-8 shadow-sm text-black"
         >
 
           <h2 class="mb-8 text-2xl font-bold">
@@ -46,7 +46,7 @@
               <input
                 v-model="form.customer.name"
                 required
-                class="field bg-white"
+                class="field bg-white text-black"
               >
             </div>
 
@@ -58,7 +58,7 @@
               <input
                 v-model="form.customer.phone"
                 required
-                class="field bg-white"
+                class="field bg-white text-black"
               >
             </div>
 
@@ -70,7 +70,7 @@
               <input
                 v-model="form.customer.city"
                 required
-                class="field bg-white"
+                class="field bg-white text-black"
               >
             </div>
 
@@ -82,7 +82,7 @@
               <input
                 v-model="form.customer.email"
                 type="email"
-                class="field bg-white"
+                class="field bg-white text-black"
               >
             </div>
 
@@ -97,7 +97,7 @@
             <textarea
               v-model="form.customer.address"
               required
-              class="field min-h-36 bg-white"
+              class="field min-h-36 bg-white text-black"
             />
 
           </div>
@@ -130,7 +130,7 @@
 
             <textarea
               v-model="form.notes"
-              class="field min-h-28 bg-white"
+              class="field min-h-28 bg-white text-black"
               placeholder="Vehicle model, year, trim or special instructions."
             />
 
@@ -141,7 +141,7 @@
         <!-- RIGHT -->
 
         <aside
-          class="sticky top-24 h-fit rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm"
+          class="sticky top-24 h-fit rounded-3xl border border-zinc-300 bg-white p-8 shadow-sm"
         >
 
           <h2 class="text-2xl font-bold text-black">
@@ -176,7 +176,7 @@
 
           </div>
 
-          <div class="mt-8 space-y-4 border-t border-zinc-200 pt-6">
+          <div class="mt-8 space-y-4 border-t border-zinc-300 pt-6">
 
             <div class="flex justify-between">
 

@@ -55,7 +55,7 @@
           <p class="text-sm font-bold uppercase text-brake">Featured products</p>
           <h2 class="mt-2 text-3xl font-black text-black">Popular this week</h2>
         </div>
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 grid-cols-2 lg:grid-cols-4">
           <ProductCard v-for="product in productStore.featuredProducts" :key="product.id" :product="product" />
         </div>
       </div>

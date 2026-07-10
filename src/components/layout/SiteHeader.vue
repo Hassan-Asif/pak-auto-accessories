@@ -74,12 +74,12 @@
 
         </RouterLink>
 
-        <RouterLink
+        <!-- <RouterLink
           to="/products"
           class="rounded-xl bg-black px-6 py-3 font-semibold text-white transition hover:bg-zinc-800"
         >
           Shop Now
-        </RouterLink>
+        </RouterLink> -->
 
       </div>
 
@@ -111,7 +111,7 @@
           class="mb-5 w-full rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3"
         />
 
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-5 text-black">
 
           <RouterLink @click="open = false" to="/">
             Home

@@ -53,7 +53,7 @@
 
       <div
         v-else
-        class="grid gap-10 lg:grid-cols-[1fr_380px]"
+        class="grid gap-8 lg:grid-cols-[1fr_340px]"
       >
 
         <!-- Products -->
@@ -61,67 +61,81 @@
         <div class="space-y-6">
 
           <div
-            v-for="item in cart.items"
-            :key="item.id"
-            class="grid gap-6 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm md:grid-cols-[120px_1fr_auto]"
-          >
+  v-for="item in cart.items"
+  :key="item.id"
+  class="flex gap-4 rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:shadow-md"
+>
 
-            <img
-              :src="item.image"
-              :alt="item.name"
-              class="h-28 w-28 rounded-2xl object-cover"
-            >
+  <!-- Image -->
+  <img
+    :src="item.image"
+    :alt="item.name"
+    class="h-24 w-24 rounded-xl object-cover"
+  >
 
-            <div>
+  <!-- Content -->
+  <div class="flex flex-1 flex-col justify-between">
 
-              <h2 class="text-xl font-bold text-zinc-900">
-                {{ item.name }}
-              </h2>
+    <div>
 
-              <p class="mt-2 text-sm text-zinc-500">
-                {{ item.category }}
-              </p>
+      <p class="text-xs uppercase tracking-wide text-zinc-500">
+        {{ item.category }}
+      </p>
 
-              <!-- <div
-                v-if="item.compatibleVehicles?.length"
-                class="mt-4 inline-flex rounded-full bg-green-50 px-4 py-2 text-sm font-medium text-green-700"
-              >
-                🚗 {{ item.compatibleVehicles[0].displayName }}
-              </div> -->
+      <h2 class="mt-1 text-lg font-bold text-zinc-900">
+        {{ item.name }}
+      </h2>
 
-              <button
-                class="mt-5 text-sm font-semibold text-red-600 hover:text-red-700"
-                @click="cart.remove(item.id)"
-              >
-                Remove
-              </button>
+      <p class="mt-3 text-2xl font-black text-black">
+        Rs {{ Number(item.price).toLocaleString() }}
+      </p>
 
-            </div>
+    </div>
 
-            <div class="flex flex-col items-end justify-between">
+    <div class="mt-4 flex items-center justify-between">
 
-              <p class="text-2xl font-black text-zinc-900">
-                Rs {{ (item.price * item.quantity).toLocaleString() }}
-              </p>
+      <!-- Quantity -->
 
-              <input
-                class="field mt-4 w-24 text-black bg-white"
-                type="number"
-                min="1"
-                :value="item.quantity"
-                @input="cart.updateQuantity(item.id, Number($event.target.value))"
-              >
+      <div class="flex items-center overflow-hidden rounded-xl border border-zinc-300">
 
-            </div>
+        <button
+          class="px-4 py-2 hover:bg-zinc-100 text-black"
+          @click="cart.updateQuantity(item.id, Math.max(1, item.quantity - 1))"
+        >
+          −
+        </button>
 
-          </div>
+        <span class="w-10 text-center font-semibold text-black">
+          {{ item.quantity }}
+        </span>
 
-        </div>
+        <button
+          class="px-4 py-2 hover:bg-zinc-100 text-black"
+          @click="cart.updateQuantity(item.id, item.quantity + 1)"
+        >
+          +
+        </button>
+
+      </div>
+
+      <button
+        class="text-sm font-medium text-red-500 transition hover:text-red-700"
+        @click="cart.remove(item.id)"
+      >
+        Remove
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
 
         <!-- Summary -->
 
         <aside
-          class="sticky top-24 h-fit rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm"
+          class="sticky top-20 h-fit rounded-2xl border border-zinc-300 bg-white p-8 shadow-sm"
         >
 
           <h2 class="text-2xl font-bold text-black">
@@ -184,24 +198,26 @@
 
           <RouterLink
             to="/checkout"
-            class="mt-8 flex w-full items-center justify-center rounded-2xl bg-black py-4 text-lg font-bold text-white transition hover:bg-zinc-800"
+            class="mt-8 flex w-full items-center justify-center rounded-xl bg-black py-3 text-base font-semibold transition hover:bg-zinc-800 text-white transition hover:bg-zinc-800"
           >
             Proceed to Checkout
           </RouterLink>
 
-          <div
-            class="mt-8 rounded-2xl bg-zinc-100 p-5 text-sm text-zinc-600"
-          >
-            ✔ Confirm availability before payment
+          <div class="mt-6 flex flex-wrap gap-2">
 
-            <br><br>
+  <span class="rounded-full bg-zinc-200 px-3 py-2 text-xs text-black">
+    ✓ Secure Checkout
+  </span>
 
-            ✔ Secure checkout
+  <span class="rounded-full bg-zinc-200 px-3 py-2 text-xs text-black">
+    ✓ Verified Products
+  </span>
 
-            <br><br>
+  <span class="rounded-full bg-zinc-200 px-3 py-2 text-xs text-black">
+    ✓ Nationwide Delivery
+  </span>
 
-            ✔ Nationwide delivery
-          </div>
+</div>
 
         </aside>
 

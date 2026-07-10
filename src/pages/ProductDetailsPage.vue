@@ -146,7 +146,7 @@
 
             <button
               class="rounded-2xl bg-black py-4 text-lg font-bold text-white transition hover:bg-zinc-800"
-              @click="cart.add(product)"
+              @click="addToCart"
             >
               Add to Cart
             </button>
@@ -268,12 +268,20 @@ import { useCartStore } from '../stores/cart'
 import { useProductStore } from '../stores/products'
 import { productInquiry } from '../utils/whatsapp'
 import ProductCard from '../components/products/ProductCard.vue'
+import { useToast } from "vue-toastification";
 
+const toast = useToast();
 const route = useRoute()
 const productStore = useProductStore()
 const cart = useCartStore()
 const product = ref(null)
 const selectedImage = ref('')
+
+function addToCart() {
+  cart.add(product.value);
+
+  toast.success(`${product.value.name} added to cart!`);
+}
 
 const relatedProducts = computed(() => {
   if (!product.value) return []
