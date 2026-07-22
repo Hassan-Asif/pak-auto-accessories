@@ -30,14 +30,14 @@
       </RouterLink>
 
       <!-- Vehicle Compatibility -->
-      <div
+      <!-- <div
         v-if="fitsSelectedVehicle"
         class="rounded-lg border border-green-200 bg-green-50 p-2 md:rounded-xl md:p-3"
       >
         <p class="text-[11px] font-semibold text-green-700 md:text-sm">
           ✓ Fits Your Selected Vehicle
         </p>
-      </div>
+      </div> -->
 
       <!-- Price -->
       <div class="flex items-end justify-between gap-2">
@@ -49,11 +49,11 @@
         </div>
 
         <RouterLink
-          :to="`/products/${product.id}`"
-          class="rounded-lg bg-black px-3 py-2 text-xs font-semibold text-white transition hover:bg-zinc-800 md:rounded-xl md:px-5 md:py-3 md:text-sm"
-        >
-          View Product
-        </RouterLink>
+  :to="`/products/${product.id}`"
+  class="hidden rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 md:inline-flex"
+>
+  View Product
+</RouterLink>
 
       </div>
 

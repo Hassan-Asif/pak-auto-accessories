@@ -14,7 +14,8 @@ const routes = [
   { path: '/admin/login', component: () => import('../pages/admin/LoginPage.vue'), meta: { title: 'Admin Login | Neon LEDs' } },
   { path: '/admin', component: () => import('../pages/admin/DashboardPage.vue'), meta: { requiresAdmin: true, title: 'Admin Dashboard | Neon LEDs' } },
   { path: '/admin/products', component: () => import('../pages/admin/ProductManagementPage.vue'), meta: { requiresAdmin: true, title: 'Manage Products | Neon LEDs' } },
-  { path: '/admin/orders', component: () => import('../pages/admin/OrderManagementPage.vue'), meta: { requiresAdmin: true, title: 'Manage Orders | Neon LEDs' } }
+  { path: '/admin/orders', component: () => import('../pages/admin/OrderManagementPage.vue'), meta: { requiresAdmin: true, title: 'Manage Orders | Neon LEDs' } },
+  { path: '/contact', component: () => import('../pages/ContactPage.vue'), meta: { title: 'Contact | NeonLEDs' } }
 ]
 
 const router = createRouter({ history: createWebHistory(), routes, scrollBehavior: () => ({ top: 0 }) })

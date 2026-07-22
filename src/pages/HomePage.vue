@@ -90,35 +90,33 @@
 
     </div>
 
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div
+  class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+>
 
-      <div
-        v-for="item in why"
-        :key="item.title"
-        class="group rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-      >
+  <div
+    v-for="item in why"
+    :key="item.title"
+    class="group rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-8"
+  >
 
-        <div
-          class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-100 text-3xl"
-        >
-          {{ item.icon }}
-        </div>
-
-        <h3
-          class="text-xl font-bold text-zinc-900"
-        >
-          {{ item.title }}
-        </h3>
-
-        <p
-          class="mt-4 leading-7 text-zinc-600"
-        >
-          {{ item.description }}
-        </p>
-
-      </div>
-
+    <div
+      class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-100 text-2xl md:mb-6 md:h-16 md:w-16 md:text-3xl"
+    >
+      {{ item.icon }}
     </div>
+
+    <h3 class="text-base font-bold text-zinc-900 md:text-xl">
+      {{ item.title }}
+    </h3>
+
+    <p class="mt-2 text-sm leading-6 text-zinc-600 md:mt-4 md:text-base md:leading-7">
+      {{ item.description }}
+    </p>
+
+  </div>
+
+</div>
 
   </div>
 

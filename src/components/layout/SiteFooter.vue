@@ -63,7 +63,14 @@
             WhatsApp Support
           </a>
 
-          <p class="text-zinc-400">
+          <RouterLink
+  to="/contact"
+  class="block text-zinc-400 transition hover:text-white"
+>
+  Contact Us
+</RouterLink>
+
+          <!-- <p class="text-zinc-400">
             Cash on Delivery
           </p>
 
@@ -77,7 +84,7 @@
 
           <p class="text-zinc-400">
             Bank Transfer
-          </p>
+          </p> -->
 
         </div>
 
@@ -96,9 +103,9 @@
             Karachi, Pakistan
           </p>
 
-          <p class="text-zinc-400">
+          <!-- <p class="text-zinc-400">
             Nationwide Delivery
-          </p>
+          </p> -->
 
           <p class="text-zinc-400">
             Secure Shopping
