@@ -4,7 +4,7 @@
     class="bg-white"
   >
 
-    <section class="container-page py-16">
+    <section class="container-page py-6 sm:py-10 lg:py-16">
 
       <div class="grid gap-14 lg:grid-cols-2">
 
@@ -13,8 +13,8 @@
         <div>
 
           <div
-            class="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm"
-          >
+  class="overflow-hidden rounded-2xl lg:rounded-3xl border border-zinc-200 bg-white shadow-sm"
+>
             <img
               :src="selectedImage"
               :alt="product.name"
@@ -22,13 +22,13 @@
             />
           </div>
 
-          <div class="mt-5 grid grid-cols-4 gap-3">
+          <div class="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
 
             <button
               v-for="image in product.images"
               :key="image"
               @click="selectedImage=image"
-              class="overflow-hidden rounded-xl border border-zinc-200 transition hover:border-black"
+              class="overflow-hidden rounded-lg sm:rounded-xl border border-zinc-200 transition hover:border-black"
             >
               <img
                 :src="image"
@@ -43,28 +43,28 @@
 
         <!-- RIGHT -->
 
-        <section class="lg:sticky lg:top-28 lg:self-start">
+        <section class="mt-2 lg:mt-0 lg:sticky lg:top-28 lg:self-start">
 
           <span
-            class="inline-flex rounded-full bg-zinc-100 px-4 py-2 text-xs font-semibold text-zinc-700"
+            class="inline-flex rounded-full bg-zinc-100 px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold text-zinc-700"
           >
             {{ product.category }}
           </span>
 
           <h1
-            class="mt-5 text-5xl font-black text-zinc-900"
+            class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-zinc-900"
           >
             {{ product.name }}
           </h1>
 
           <p
-            class="mt-6 text-5xl font-black text-black"
+            class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-black text-black"
           >
             Rs {{ Number(product.sellingPrice || product.price).toLocaleString() }}
           </p>
 
           <p
-            class="mt-6 leading-8 text-zinc-600"
+            class="mt-5 text-sm sm:text-base leading-7 sm:leading-8 text-zinc-600"
           >
             {{ product.description }}
           </p>
@@ -113,10 +113,10 @@
           <!-- Delivery -->
 
           <div
-            class="mt-6 rounded-2xl border border-zinc-200 p-5"
+            class="mt-6 rounded-xl sm:rounded-2xl border border-zinc-200 p-4 sm:p-5"
           >
 
-            <div class="flex items-center gap-3">
+            <div class="flex items-start gap-3">
 
               <span>
                 📦
@@ -141,11 +141,11 @@
           <!-- Buttons -->
 
           <div
-            class="mt-8 flex flex-col gap-4"
+            class="mt-7 flex flex-col gap-3 sm:gap-4"
           >
 
             <button
-              class="rounded-2xl bg-black py-4 text-lg font-bold text-white transition hover:bg-zinc-800"
+              class="w-full rounded-xl sm:rounded-2xl bg-black py-3.5 sm:py-4 text-base sm:text-lg font-bold text-white transition hover:bg-zinc-800 active:scale-[0.99]"
               @click="addToCart"
             >
               Add to Cart
@@ -215,9 +215,9 @@
     <!-- Related Products -->
 
     <section
-      v-if="relatedProducts.length"
-      class="bg-zinc-50 py-20"
-    >
+  v-if="relatedProducts.length"
+  class="bg-zinc-50 py-12 sm:py-16 lg:py-20"
+>
 
       <div class="container-page">
 
@@ -229,7 +229,7 @@
               You May Also Like
             </h2>
 
-            <p class="mt-3 text-zinc-500">
+            <p class="mt-2 text-sm sm:text-base text-zinc-500">
               Products compatible with similar vehicles.
             </p>
 
@@ -237,14 +237,14 @@
 
           <RouterLink
             to="/products"
-            class="hidden rounded-xl border border-black px-6 py-3 font-semibold hover:bg-black hover:text-white sm:block"
+             class="hidden sm:block rounded-xl border border-black px-5 py-3 font-semibold hover:bg-black hover:text-white"
           >
             View All
           </RouterLink>
 
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:gap-6">
 
           <ProductCard
             v-for="item in relatedProducts"

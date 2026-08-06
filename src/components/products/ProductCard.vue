@@ -1,64 +1,65 @@
 <template>
-  <article
-    class="group overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+  <RouterLink
+    :to="`/products/${product.id}`"
+    class="group block overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
   >
     <!-- Image -->
-    <RouterLink :to="`/products/${product.id}`" class="block overflow-hidden">
+    <div class="overflow-hidden">
       <img
         :src="product.images?.[0] || 'https://placehold.co/600x600?text=No+Image'"
         :alt="product.name"
         loading="lazy"
-        class="aspect-[4/4.2] w-full object-cover transition duration-500 group-hover:scale-105"
+        class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
       />
-    </RouterLink>
+    </div>
 
-    <div class="space-y-2 p-3 md:space-y-4 md:p-5">
+    <!-- Content -->
+    <div class="space-y-2 p-3 sm:space-y-3 sm:p-4 lg:space-y-4 lg:p-5">
 
       <!-- Category -->
       <span
-        class="inline-flex rounded-full bg-zinc-100 px-2 py-1 text-[10px] font-semibold uppercase text-zinc-700 md:px-3 md:text-xs"
+        class="inline-flex rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] sm:px-3 sm:text-xs font-semibold uppercase text-zinc-700"
       >
         {{ product.category }}
       </span>
 
       <!-- Product Name -->
-      <RouterLink
-        :to="`/products/${product.id}`"
-        class="block text-sm font-bold leading-5 text-zinc-900 transition hover:text-black md:text-xl"
+      <h3
+        class="line-clamp-2 min-h-[2.8rem] text-sm sm:text-base lg:text-xl font-bold leading-5 sm:leading-6 text-zinc-900 transition group-hover:text-black"
       >
         {{ product.name }}
-      </RouterLink>
+      </h3>
 
-      <!-- Vehicle Compatibility -->
-      <!-- <div
+      <!-- Compatibility -->
+      <!--
+      <div
         v-if="fitsSelectedVehicle"
-        class="rounded-lg border border-green-200 bg-green-50 p-2 md:rounded-xl md:p-3"
+        class="rounded-lg border border-green-200 bg-green-50 p-2"
       >
-        <p class="text-[11px] font-semibold text-green-700 md:text-sm">
+        <p class="text-[11px] sm:text-sm font-semibold text-green-700">
           ✓ Fits Your Selected Vehicle
         </p>
-      </div> -->
+      </div>
+      -->
 
-      <!-- Price -->
-      <div class="flex items-end justify-between gap-2">
+      <!-- Bottom -->
+<div class="flex items-center justify-between pt-1">
+  <p class="text-lg sm:text-xl lg:text-2xl font-black text-zinc-900">
+    Rs {{ Number(product.sellingPrice || product.price || 0).toLocaleString() }}
+  </p>
+</div>
 
-        <div>
-          <p class="text-lg font-black text-zinc-900 md:text-2xl">
-            Rs {{ Number(product.sellingPrice || product.price || 0).toLocaleString() }}
-          </p>
-        </div>
-
-        <RouterLink
-  :to="`/products/${product.id}`"
-  class="hidden rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 md:inline-flex"
->
-  View Product
-</RouterLink>
+        <!-- Desktop Button
+        <span
+          class="hidden lg:inline-flex items-center rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white transition group-hover:bg-zinc-800"
+        >
+          View Product
+        </span> -->
 
       </div>
 
-    </div>
-  </article>
+    
+  </RouterLink>
 </template>
 
 <script setup>
