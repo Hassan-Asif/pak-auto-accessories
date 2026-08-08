@@ -61,6 +61,13 @@
           >
             Contact Us
           </RouterLink>
+          
+          <RouterLink
+            to="/categories"
+            :class="navLinkClass"
+          >
+            Categories
+          </RouterLink>
 
         </div>
 
@@ -202,7 +209,7 @@
 
 
         <!-- SELECTED VEHICLE -->
-        <div
+        <!-- <div
           v-if="selectedVehicle"
           :class="[
             'mb-5 rounded-xl border px-4 py-3 text-sm',
@@ -212,7 +219,7 @@
           ]"
         >
           🚗 {{ selectedVehicle.displayName }}
-        </div>
+        </div> -->
 
 
         <!-- MOBILE LINKS -->
@@ -240,6 +247,13 @@
             :class="mobileLinkClass"
           >
             Categories
+          </RouterLink>
+          <RouterLink
+            to="/contact"
+            @click="closeMenu"
+            :class="mobileLinkClass"
+          >
+            Contact Us
           </RouterLink>
 
           <RouterLink
