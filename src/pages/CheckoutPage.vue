@@ -1,52 +1,52 @@
 <template>
-  <main class="min-h-screen bg-zinc-50 py-16">
+  <main class="min-h-screen bg-zinc-50 py-6 sm:py-10 lg:py-16">
 
     <div class="container-page">
 
       <!-- Header -->
 
-      <div class="mb-12">
+     <div class="mb-8 lg:mb-12">
 
-        <span class="rounded-full bg-black px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white">
+        <span class="inline-flex rounded-full bg-black px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white">
           Checkout
         </span>
 
-        <h1 class="mt-5 text-5xl font-black text-zinc-900">
+        <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-zinc-900">
           Complete Your Order
         </h1>
 
-        <p class="mt-3 text-lg text-zinc-600">
+        <p class="mt-3 text-base sm:text-lg text-zinc-600">
           Fill in your delivery details and we'll confirm your order before payment.
         </p>
 
       </div>
 
       <form
-        class="grid gap-10 lg:grid-cols-[1fr_380px]"
+        class="grid gap-6 lg:gap-10 lg:grid-cols-[minmax(0,1fr)_380px]"
         @submit.prevent="placeOrder"
       >
 
         <!-- LEFT -->
 
         <section
-          class="rounded-3xl border border-zinc-300 bg-white p-8 shadow-sm text-black"
+          class="rounded-2xl lg:rounded-3xl border border-zinc-300 bg-white p-4 sm:p-6 lg:p-8 shadow-sm text-black"
         >
 
-          <h2 class="mb-8 text-2xl font-bold">
+          <h2 class="mb-6 text-xl sm:text-2xl font-bold">
             Customer Information
           </h2>
 
-          <div class="grid gap-6 sm:grid-cols-2">
+          <div class="grid gap-4 sm:gap-6 sm:grid-cols-2">
 
             <div>
-              <label class="label">
+              <label class="mb-2 block text-sm font-medium text-zinc-700">
                 Full Name
               </label>
 
               <input
                 v-model="form.customer.name"
                 required
-                class="field bg-white text-black"
+                class="field w-full bg-white text-black"
               >
             </div>
 
@@ -97,7 +97,7 @@
             <textarea
               v-model="form.customer.address"
               required
-              class="field min-h-36 bg-white text-black"
+              class="field w-full min-h-32 sm:min-h-36 bg-white text-black"
             />
 
           </div>
@@ -130,7 +130,7 @@
 
             <textarea
               v-model="form.notes"
-              class="field min-h-28 bg-white text-black"
+              class="field w-full min-h-24 sm:min-h-28 bg-white text-black"
               placeholder="Vehicle model, year, trim or special instructions."
             />
 
@@ -141,103 +141,131 @@
         <!-- RIGHT -->
 
         <aside
-          class="sticky top-24 h-fit rounded-3xl border border-zinc-300 bg-white p-8 shadow-sm"
+  class="min-w-0 h-fit rounded-2xl border border-zinc-300 bg-white p-4 shadow-sm sm:rounded-3xl sm:p-6 lg:sticky lg:top-24 lg:p-8"
+>
+
+  <!-- Header -->
+
+  <h2 class="text-xl font-bold text-black sm:text-2xl">
+    Order Summary
+  </h2>
+
+
+  <!-- Items -->
+
+  <div class="mt-6 space-y-4">
+
+    <div
+      v-for="item in cart.items"
+      :key="item.id"
+      class="flex min-w-0 items-start gap-3 border-b border-zinc-100 pb-4 text-black"
+    >
+
+      <!-- Product Info -->
+
+      <div class="min-w-0 flex-1">
+
+        <p
+          class="break-words text-sm font-bold leading-5 text-zinc-900 sm:text-base"
         >
+          {{ item.name }}
+        </p>
 
-          <h2 class="text-2xl font-bold text-black">
-            Order Summary
-          </h2>
+        <p class="mt-1 text-xs text-zinc-500 sm:text-sm">
+          Qty {{ item.quantity }}
+        </p>
 
-          <div class="mt-8 space-y-5">
+      </div>
 
-            <div
-              v-for="item in cart.items"
-              :key="item.id"
-              class="flex items-center justify-between border-b border-zinc-100 pb-4 text-black"
-            >
 
-              <div>
+      <!-- Item Price -->
 
-                <p class="font-semibold text-zinc-900 ">
-                  {{ item.name }}
-                </p>
+      <p
+        class="shrink-0 text-right text-sm font-bold text-zinc-900 sm:text-base"
+      >
+        Rs {{ (item.price * item.quantity).toLocaleString() }}
+      </p>
 
-                <p class="text-sm text-zinc-500">
-                  Qty {{ item.quantity }}
-                </p>
+    </div>
 
-              </div>
+  </div>
 
-              <p class="font-bold">
-                Rs {{ (item.price * item.quantity).toLocaleString() }}
-              </p>
 
-            </div>
+  <!-- Totals -->
 
-          </div>
+  <div
+    class="mt-6 space-y-4 border-t border-zinc-300 pt-5"
+  >
 
-          <div class="mt-8 space-y-4 border-t border-zinc-300 pt-6">
+    <!-- Subtotal -->
 
-            <div class="flex justify-between">
+    <div
+      class="flex items-center justify-between gap-4 text-sm sm:text-base"
+    >
 
-              <span class=" text-black">
-                Subtotal
-              </span>
+      <span class="text-zinc-500">
+        Subtotal
+      </span>
 
-              <span class="text-black">
-                Rs {{ cart.subtotal.toLocaleString() }}
-              </span>
+      <span class="shrink-0 font-medium text-black">
+        Rs {{ cart.subtotal.toLocaleString() }}
+      </span>
 
-            </div>
+    </div>
 
-            <div class="flex justify-between text-black">
 
-              <!-- <span class="text-zinc-500">
-                Delivery
-              </span>
+    <!-- Total -->
 
-              <span>
-                Calculated after confirmation
-              </span> -->
+    <div
+      class="flex items-center justify-between gap-4 border-t border-zinc-200 pt-4"
+    >
 
-            </div>
+      <span class="text-lg font-black text-black sm:text-xl">
+        Total
+      </span>
 
-            <div class="flex justify-between text-xl font-black text-black">
+      <span
+        class="shrink-0 text-lg font-black text-black sm:text-xl"
+      >
+        Rs {{ cart.subtotal.toLocaleString() }}
+      </span>
 
-              <span>Total</span>
+    </div>
 
-              <span>
-                Rs {{ cart.subtotal.toLocaleString() }}
-              </span>
+  </div>
 
-            </div>
 
-          </div>
+  <!-- Checkout Button -->
 
-          <button
-            class="mt-8 w-full rounded-2xl bg-black py-4 text-lg font-bold text-white transition hover:bg-zinc-800"
-            :disabled="saving || !cart.items.length"
-          >
-            {{ saving ? 'Placing Order...' : 'Place Order' }}
-          </button>
+  <button
+    class="mt-6 w-full rounded-xl bg-black py-3.5 text-sm font-bold text-white transition hover:bg-zinc-800 active:scale-[0.99] sm:mt-8 sm:py-4 sm:text-base"
+    :disabled="saving || !cart.items.length"
+  >
+    {{ saving ? 'Placing Order...' : 'Place Order' }}
+  </button>
 
-          <div
-            class="mt-8 rounded-2xl bg-zinc-100 p-5 text-sm text-zinc-600"
-          >
 
-            ✔ Order confirmation before payment
+  <!-- Trust -->
 
-            <br><br>
+  <div
+    class="mt-5 rounded-2xl bg-zinc-50 p-4 text-xs leading-6 text-zinc-600 sm:mt-6 sm:p-5 sm:text-sm"
+  >
 
-            ✔ Secure checkout
+    <p>
+      ✓ Order confirmation before payment
+    </p>
 
-            <br><br>
+    <p class="mt-1">
+      ✓ Secure checkout
+    </p>
 
-            ✔ Nationwide delivery
+    <p class="mt-1">
+      ✓ Nationwide delivery
+    </p>
 
-          </div>
+  </div>
 
-        </aside>
+</aside>
 
       </form>
 
