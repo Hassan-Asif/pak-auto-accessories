@@ -177,7 +177,7 @@
               class="rounded-xl bg-zinc-200 p-3 text-center sm:rounded-2xl sm:p-4"
             >
               <div class="text-lg sm:text-xl color-black">
-                ✔
+                ✔️
               </div>
 
               <p class="mt-1 text-[10px] font-semibold text-zinc-700 sm:text-xs">
