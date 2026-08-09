@@ -1,15 +1,165 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta name="description" content="Premium car accessories in Pakistan with WhatsApp confirmation before payment." />
-    <link rel="icon" href="/logo yhacc.jpeg" type="image/svg+xml" />
-    <title>NeonLEDs</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="theme-color"
+    content="#000000"
+  />
+
+  <meta
+    name="description"
+    content="Premium car accessories in Pakistan with WhatsApp confirmation before payment."
+  />
+
+  <link
+    rel="icon"
+    href="/logo yhacc.jpeg"
+    type="image/jpeg"
+  />
+
+  <title>NeonLEDs</title>
+
+
+  <!-- ================= INITIAL LOADER ================= -->
+
+  <style>
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+
+    #initial-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity 0.45s ease,
+        visibility 0.45s ease;
+    }
+
+    #initial-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .loader-logo {
+      color: #fff;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .loader-logo span {
+      color: #71717a;
+    }
+
+    .loader-spinner {
+      width: 32px;
+      height: 32px;
+      margin-top: 28px;
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: neon-spin 0.8s linear infinite;
+    }
+
+    .loader-text {
+      margin-top: 16px;
+      color: #71717a;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    @keyframes neon-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .loader-logo {
+        font-size: 28px;
+      }
+
+      .loader-spinner {
+        width: 28px;
+        height: 28px;
+        margin-top: 24px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- Initial Loading Screen -->
+
+  <div id="initial-loader">
+
+    <div class="loader-content">
+
+      <div class="loader-logo">
+        Neon<span>LEDs</span>
+      </div>
+
+      <div class="loader-spinner"></div>
+
+      <div class="loader-text">
+        Loading
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Vue Application -->
+
+  <div id="app"></div>
+
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
 </html>

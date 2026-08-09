@@ -2,54 +2,54 @@
   <main>
 
     <!-- ================= HERO ================= -->
-    <br />
-    <section
-      class="relative min-h-[620px] overflow-hidden bg-black sm:min-h-[660px] lg:min-h-[720px]"
-    >
 
-      <!-- Hero Image Slider -->
-      <div class="absolute inset-0 overflow-hidden">
+    <section class="bg-black">
 
-        <div
-          class="flex h-full w-full transition-transform duration-1000 ease-in-out"
-          :style="{
-            transform: `translateX(-${currentHeroImage * 100}%)`
-          }"
-        >
+      <!-- HERO IMAGE -->
+      <div
+        class="relative h-[360px] overflow-hidden sm:h-[480px] lg:h-[620px]"
+      >
+
+        <!-- Image Slider -->
+        <div class="absolute inset-0 overflow-hidden">
 
           <div
-            v-for="(image, index) in heroImages"
-            :key="index"
-            class="relative h-full w-full min-w-full flex-shrink-0"
+            class="flex h-full w-full transition-transform duration-1000 ease-in-out"
+            :style="{
+              transform: `translateX(-${currentHeroImage * 100}%)`
+            }"
           >
 
-            <img
-              :src="image"
-              alt="Car accessories"
-              class="h-full w-full object-cover object-center"
-            />
+            <div
+              v-for="(image, index) in heroImages"
+              :key="index"
+              class="relative h-full w-full min-w-full flex-shrink-0"
+            >
+
+              <img
+                :src="image"
+                alt="Car accessories"
+                class="h-full w-full object-cover object-center"
+              />
+
+            </div>
 
           </div>
 
         </div>
 
-      </div>
+
+        <!-- Image Overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/20"
+        ></div>
 
 
-      <!-- Hero Overlay -->
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20"
-      ></div>
+        <!-- Hero Text -->
+        <div
+          class="container-page relative z-10 flex h-full items-center"
+        >
 
-
-      <!-- Hero Content -->
-      <div
-        class="container-page relative z-10 flex min-h-[620px] items-center py-10 sm:min-h-[660px] sm:py-14 lg:min-h-[720px]"
-      >
-
-        <div class="w-full max-w-3xl">
-
-          <!-- Hero Text -->
           <div class="max-w-2xl">
 
             <span
@@ -57,6 +57,7 @@
             >
               Premium Automotive Accessories
             </span>
+
 
             <h1
               class="mt-4 max-w-xl text-3xl font-black leading-[1.05] tracking-tight text-white sm:mt-6 sm:text-5xl lg:text-6xl xl:text-7xl"
@@ -67,6 +68,7 @@
               </span>
             </h1>
 
+
             <p
               class="mt-4 max-w-xl text-sm leading-6 text-zinc-300 sm:mt-5 sm:text-base sm:leading-7 lg:text-lg"
             >
@@ -76,56 +78,78 @@
 
           </div>
 
-
-          <!-- Vehicle Selector -->
-          <div
-            class="mt-6 w-full sm:mt-8 lg:max-w-4xl"
-          >
-            <VehicleSelector />
-          </div>
+        </div>
 
 
-          <!-- Small Trust Info -->
-          <div
-            class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[10px] font-medium text-zinc-300 sm:mt-7 sm:gap-6 sm:text-xs"
-          >
+        <!-- Slider Indicators -->
+        <div
+          class="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-1.5 sm:bottom-7"
+        >
 
-            <span>
-              ✓ Verified Products
-            </span>
-
-            <span>
-              ✓ Vehicle Compatibility
-            </span>
-
-            <span>
-              ✓ Nationwide Delivery
-            </span>
-
-          </div>
+          <button
+            v-for="(_, index) in heroImages"
+            :key="index"
+            type="button"
+            class="h-1.5 rounded-full transition-all duration-300"
+            :class="
+              currentHeroImage === index
+                ? 'w-7 bg-white'
+                : 'w-1.5 bg-white/40'
+            "
+            @click="currentHeroImage = index"
+          />
 
         </div>
 
       </div>
 
 
-      <!-- Slider Indicators -->
-      <div
-        class="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-1.5 sm:bottom-7"
-      >
+      <!-- ================= VEHICLE SELECTOR ================= -->
 
-        <button
-          v-for="(_, index) in heroImages"
-          :key="index"
-          type="button"
-          class="h-1.5 rounded-full transition-all duration-300"
-          :class="
-            currentHeroImage === index
-              ? 'w-7 bg-white'
-              : 'w-1.5 bg-white/40'
-          "
-          @click="currentHeroImage = index"
-        />
+      <div class="container-page py-5 sm:py-7 lg:py-8">
+
+        <div
+          class="mx-auto w-full max-w-5xl"
+        >
+
+          <div
+            class="rounded-2xl border border-white/10 bg-zinc-900 p-3 shadow-2xl sm:rounded-3xl sm:p-5 lg:p-6"
+          >
+
+            <div
+              class="mb-3 flex items-center gap-3 sm:mb-5"
+            >
+
+              <div
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-lg sm:h-11 sm:w-11"
+              >
+                🚗
+              </div>
+
+              <div>
+
+                <h2
+                  class="text-sm font-bold text-white sm:text-lg"
+                >
+                  Find Accessories For Your Car
+                </h2>
+
+                <p
+                  class="text-[10px] text-zinc-500 sm:text-xs"
+                >
+                  Select your vehicle to find compatible products.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <VehicleSelector />
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -138,7 +162,6 @@
 
       <div class="container-page">
 
-        <!-- Header -->
         <div
           class="mb-8 flex items-end justify-between gap-4 sm:mb-10"
         >
@@ -177,9 +200,8 @@
         </div>
 
 
-        <!-- Categories -->
         <div
-          class="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4"
+          class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4"
         >
 
           <CategoryCard
@@ -191,7 +213,6 @@
         </div>
 
 
-        <!-- Mobile View All -->
         <RouterLink
           to="/categories"
           class="mt-6 flex w-full items-center justify-center rounded-xl border border-zinc-300 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-black hover:text-white sm:hidden"
@@ -210,7 +231,6 @@
 
       <div class="container-page">
 
-        <!-- Header -->
         <div
           class="mb-8 flex items-end justify-between gap-4 sm:mb-10 lg:mb-12"
         >
@@ -256,7 +276,6 @@
         </div>
 
 
-        <!-- Products -->
         <div
           class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 xl:grid-cols-5"
         >
@@ -270,7 +289,6 @@
         </div>
 
 
-        <!-- Mobile Shop Button -->
         <RouterLink
           to="/products"
           class="mt-8 flex w-full items-center justify-center rounded-xl border border-black py-3.5 text-sm font-semibold text-black transition hover:bg-black hover:text-white sm:hidden"
@@ -289,7 +307,6 @@
 
       <div class="container-page">
 
-        <!-- Intro -->
         <div
           class="mb-10 max-w-3xl sm:mb-14 lg:mb-16"
         >
@@ -319,9 +336,8 @@
         </div>
 
 
-        <!-- Features -->
         <div
-          class="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4"
+          class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4"
         >
 
           <div
@@ -330,7 +346,6 @@
             class="group rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7"
           >
 
-            <!-- Number -->
             <div
               class="flex items-center justify-between"
             >
@@ -371,7 +386,7 @@
     </section>
 
 
-    <!-- ================= DARK SUPPORT CTA ================= -->
+    <!-- ================= SUPPORT CTA ================= -->
 
     <section class="bg-white pb-14 sm:pb-18 lg:pb-24">
 
@@ -381,7 +396,6 @@
           class="relative overflow-hidden rounded-3xl bg-black px-5 py-10 sm:px-8 sm:py-14 lg:px-14 lg:py-16"
         >
 
-          <!-- Decorative circles -->
           <div
             class="absolute -right-20 -top-20 h-64 w-64 rounded-full border border-white/10"
           ></div>
@@ -447,7 +461,6 @@
 
       <div class="container-page">
 
-        <!-- Header -->
         <div class="mb-8 sm:mb-10">
 
           <p
@@ -477,7 +490,6 @@
         </div>
 
 
-        <!-- Reviews -->
         <div
           class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
         >
@@ -598,11 +610,8 @@ const reviews = [
 
 onMounted(() => {
 
-  // Load products
   productStore.fetchProducts()
 
-
-  // Start hero rotation
   heroInterval = setInterval(() => {
 
     currentHeroImage.value =
