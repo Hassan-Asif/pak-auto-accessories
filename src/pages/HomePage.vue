@@ -2,7 +2,7 @@
   <main>
 
     <!-- ================= HERO ================= -->
-
+    <br />
     <section
       class="relative min-h-[620px] overflow-hidden bg-black sm:min-h-[660px] lg:min-h-[720px]"
     >

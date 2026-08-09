@@ -215,8 +215,14 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import CategoryCard from '../components/products/CategoryCard.vue'
 import { useProductStore } from '../stores/products'
+import { supportMessage } from '../utils/whatsapp'
 
 const productStore = useProductStore()
+
+onMounted(() => {
+  productStore.fetchProducts()
+})
 </script>

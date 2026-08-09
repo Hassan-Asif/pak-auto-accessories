@@ -6,23 +6,18 @@
   { "id": "hilux", "brand": "Toyota", "name": "Hilux" },
   { "id": "prado", "brand": "Toyota", "name": "Prado" },
   { "id": "land-cruiser", "brand": "Toyota", "name": "Land Cruiser" },
-  { "id": "camry", "brand": "Toyota", "name": "Camry" },
   { "id": "vitz", "brand": "Toyota", "name": "Vitz" },
   { "id": "passo", "brand": "Toyota", "name": "Passo" },
   { "id": "aqua", "brand": "Toyota", "name": "Aqua" },
   { "id": "prius", "brand": "Toyota", "name": "Prius" },
   { "id": "raize", "brand": "Toyota", "name": "Raize" },
-  { "id": "rush", "brand": "Toyota", "name": "Rush" },
 
   { "id": "civic", "brand": "Honda", "name": "Civic" },
   { "id": "city", "brand": "Honda", "name": "City" },
   { "id": "br-v", "brand": "Honda", "name": "BR-V" },
   { "id": "hr-v", "brand": "Honda", "name": "HR-V" },
-  { "id": "cr-v", "brand": "Honda", "name": "CR-V" },
   { "id": "vezel", "brand": "Honda", "name": "Vezel" },
-  { "id": "accord", "brand": "Honda", "name": "Accord" },
-  { "id": "fit", "brand": "Honda", "name": "Fit" },
-  { "id": "grace", "brand": "Honda", "name": "Grace" },
+
 
   { "id": "alto", "brand": "Suzuki", "name": "Alto" },
   { "id": "cultus", "brand": "Suzuki", "name": "Cultus" },
@@ -43,19 +38,16 @@
 
   { "id": "alsvin", "brand": "Changan", "name": "Alsvin" },
   { "id": "oshan-x7", "brand": "Changan", "name": "Oshan X7" },
-  { "id": "m9", "brand": "Changan", "name": "M9" },
 
   { "id": "hs", "brand": "MG", "name": "HS" },
   { "id": "zs", "brand": "MG", "name": "ZS" },
   { "id": "zs-ev", "brand": "MG", "name": "ZS EV" },
   { "id": "mg4", "brand": "MG", "name": "MG4" },
 
-  { "id": "x70", "brand": "Proton", "name": "X70" },
-  { "id": "x50", "brand": "Proton", "name": "X50" },
+
   { "id": "saga", "brand": "Proton", "name": "Saga" },
 
   { "id": "glory-580", "brand": "DFSK", "name": "Glory 580" },
-  { "id": "glory-500", "brand": "DFSK", "name": "Glory 500" },
   { "id": "k01", "brand": "DFSK", "name": "K01" },
   { "id": "c31", "brand": "DFSK", "name": "C31" },
 
