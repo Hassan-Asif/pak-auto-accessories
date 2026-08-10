@@ -41,12 +41,12 @@
         <!-- DESKTOP NAVIGATION -->
         <div class="hidden items-center gap-7 lg:flex">
 
-          <RouterLink
+          <!-- <RouterLink
             to="/"
             :class="navLinkClass"
           >
             Home
-          </RouterLink>
+          </RouterLink> -->
 
           <RouterLink
             to="/products"
@@ -56,18 +56,20 @@
           </RouterLink>
 
           <RouterLink
+            to="/categories"
+            :class="navLinkClass"
+          >
+            Categories
+          </RouterLink>
+
+          <RouterLink
             to="/contact"
             :class="navLinkClass"
           >
             Contact Us
           </RouterLink>
           
-          <RouterLink
-            to="/categories"
-            :class="navLinkClass"
-          >
-            Categories
-          </RouterLink>
+          
 
         </div>
 

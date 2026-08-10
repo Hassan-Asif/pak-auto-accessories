@@ -98,12 +98,7 @@
             WhatsApp Support
           </a>
 
-          <RouterLink
-            to="/contact"
-            class="block text-sm text-zinc-400 transition hover:text-white"
-          >
-            Contact Us
-          </RouterLink>
+          
 
           <RouterLink
             to="/checkout"

@@ -1,7 +1,5 @@
-```vue
 <template>
   <AdminShell>
-
     <section class="space-y-8">
 
       <!-- ================= HEADER ================= -->
@@ -9,7 +7,6 @@
       <div
         class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
       >
-
         <div>
           <p
             class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500"
@@ -24,8 +21,8 @@
           </h1>
 
           <p class="mt-2 max-w-2xl text-sm leading-6 text-zinc-500">
-            Manage products, pricing, availability, images and vehicle
-            compatibility.
+            Manage products, categories, pricing, availability, images and
+            vehicle compatibility.
           </p>
         </div>
 
@@ -37,7 +34,6 @@
           <span class="mr-2 text-lg">+</span>
           Add Product
         </button>
-
       </div>
 
 
@@ -50,14 +46,10 @@
 
         <!-- Form Header -->
 
-        <div
-          class="border-b border-zinc-800 px-5 py-5 sm:px-7"
-        >
-
+        <div class="border-b border-zinc-800 px-5 py-5 sm:px-7">
           <div class="flex items-center justify-between gap-4">
 
             <div>
-
               <p
                 class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600"
               >
@@ -67,7 +59,6 @@
               <h2 class="mt-1 text-xl font-black text-white sm:text-2xl">
                 {{ form.id ? 'Edit Product' : 'Add Product' }}
               </h2>
-
             </div>
 
             <button
@@ -79,7 +70,6 @@
             </button>
 
           </div>
-
         </div>
 
 
@@ -93,7 +83,6 @@
           <div>
 
             <div class="mb-5">
-
               <h3 class="font-bold text-white">
                 Basic Information
               </h3>
@@ -101,13 +90,14 @@
               <p class="mt-1 text-xs text-zinc-600">
                 Product details shown to customers.
               </p>
-
             </div>
 
 
-            <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
 
-              <div>
+              <!-- Product Name -->
+
+              <div class="lg:col-span-2">
                 <label class="label">
                   Product Name
                 </label>
@@ -115,11 +105,13 @@
                 <input
                   v-model="form.name"
                   class="field"
-                  placeholder="e.g. 9005 LED Headlight"
+                  placeholder="e.g. Premium Floor Mats"
                   required
                 >
               </div>
 
+
+              <!-- Category -->
 
               <div>
                 <label class="label">
@@ -129,7 +121,12 @@
                 <select
                   v-model="form.category"
                   class="field"
+                  @change="handleCategoryChange"
                 >
+                  <option value="">
+                    Select Category
+                  </option>
+
                   <option
                     v-for="category in products.categories"
                     :key="category.id"
@@ -140,6 +137,39 @@
                 </select>
               </div>
 
+
+              <!-- Subcategory -->
+
+              <div>
+                <label class="label">
+                  Subcategory
+                </label>
+
+                <select
+                  v-model="form.subcategory"
+                  class="field"
+                  :disabled="!selectedCategoryObject?.subcategories?.length"
+                >
+                  <option value="">
+                    {{
+                      selectedCategoryObject?.subcategories?.length
+                        ? 'Select Subcategory'
+                        : 'No Subcategories'
+                    }}
+                  </option>
+
+                  <option
+                    v-for="subcategory in selectedCategoryObject?.subcategories || []"
+                    :key="subcategory.id"
+                    :value="subcategory.name"
+                  >
+                    {{ subcategory.name }}
+                  </option>
+                </select>
+              </div>
+
+
+              <!-- Availability -->
 
               <div>
                 <label class="label">
@@ -172,7 +202,6 @@
           >
 
             <div>
-
               <h3 class="font-bold text-white">
                 Compatible Vehicles
               </h3>
@@ -180,11 +209,8 @@
               <p class="mt-1 text-xs leading-5 text-zinc-600">
                 Select every vehicle generation this product fits.
               </p>
-
             </div>
 
-
-            <!-- Selectors -->
 
             <div
               class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
@@ -307,8 +333,6 @@
             </div>
 
 
-            <!-- Empty -->
-
             <div
               v-else
               class="mt-5 rounded-xl border border-dashed border-zinc-800 px-4 py-6 text-center"
@@ -326,7 +350,6 @@
           <div>
 
             <div class="mb-5">
-
               <h3 class="font-bold text-white">
                 Pricing
               </h3>
@@ -334,7 +357,6 @@
               <p class="mt-1 text-xs text-zinc-600">
                 Set your selling and vendor costs.
               </p>
-
             </div>
 
 
@@ -362,7 +384,6 @@
                   >
 
                 </div>
-
               </div>
 
 
@@ -388,7 +409,6 @@
                   >
 
                 </div>
-
               </div>
 
 
@@ -401,11 +421,9 @@
                 <div
                   class="flex min-h-[46px] items-center rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4"
                 >
-
                   <span class="text-sm font-black text-emerald-400">
                     Rs {{ profit.toLocaleString() }}
                   </span>
-
                 </div>
 
               </div>
@@ -420,11 +438,9 @@
           <div>
 
             <div class="mb-5">
-
               <h3 class="font-bold text-white">
                 Vendor & Delivery
               </h3>
-
             </div>
 
 
@@ -495,7 +511,6 @@
           <div>
 
             <div class="mb-5">
-
               <h3 class="font-bold text-white">
                 Product Images
               </h3>
@@ -503,13 +518,10 @@
               <p class="mt-1 text-xs leading-5 text-zinc-600">
                 You can upload images or paste external image URLs.
               </p>
-
             </div>
 
 
             <div class="grid gap-5 lg:grid-cols-2">
-
-              <!-- Upload -->
 
               <div
                 class="rounded-xl border border-zinc-800 bg-zinc-950 p-4"
@@ -533,8 +545,6 @@
 
               </div>
 
-
-              <!-- URLs -->
 
               <div
                 class="rounded-xl border border-zinc-800 bg-zinc-950 p-4"
@@ -638,7 +648,6 @@
         >
 
           <div>
-
             <p
               class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-600"
             >
@@ -648,9 +657,7 @@
             <h2 class="mt-1 text-xl font-black text-white">
               Your Products
             </h2>
-
           </div>
-
 
           <span
             class="rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs font-bold text-zinc-500"
@@ -661,7 +668,7 @@
         </div>
 
 
-        <!-- Desktop Table -->
+        <!-- Desktop -->
 
         <div
           class="hidden overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 md:block"
@@ -669,7 +676,7 @@
 
           <div class="overflow-x-auto">
 
-            <table class="w-full min-w-[850px]">
+            <table class="w-full min-w-[900px]">
 
               <thead class="border-b border-zinc-800 bg-zinc-950">
 
@@ -677,6 +684,10 @@
 
                   <th class="p-4 text-left text-xs font-bold uppercase tracking-wider text-zinc-600">
                     Product
+                  </th>
+
+                  <th class="p-4 text-left text-xs font-bold uppercase tracking-wider text-zinc-600">
+                    Category
                   </th>
 
                   <th class="p-4 text-left text-xs font-bold uppercase tracking-wider text-zinc-600">
@@ -726,17 +737,12 @@
                         IMG
                       </div>
 
-
                       <div class="min-w-0">
 
                         <p
-                          class="max-w-[260px] truncate font-bold text-white"
+                          class="max-w-[220px] truncate font-bold text-white"
                         >
                           {{ product.name }}
-                        </p>
-
-                        <p class="mt-1 text-xs text-zinc-600">
-                          {{ product.category }}
                         </p>
 
                       </div>
@@ -746,7 +752,23 @@
                   </td>
 
 
-                  <td class="p-4 whitespace-nowrap">
+                  <td class="p-4">
+
+                    <p class="text-sm font-semibold text-zinc-300">
+                      {{ product.category }}
+                    </p>
+
+                    <p
+                      v-if="product.subcategory"
+                      class="mt-1 text-xs text-zinc-600"
+                    >
+                      {{ product.subcategory }}
+                    </p>
+
+                  </td>
+
+
+                  <td class="whitespace-nowrap p-4">
 
                     <span class="font-bold text-white">
                       Rs {{ Number(product.sellingPrice || 0).toLocaleString() }}
@@ -777,7 +799,7 @@
                   </td>
 
 
-                  <td class="p-4 text-right whitespace-nowrap">
+                  <td class="whitespace-nowrap p-4 text-right">
 
                     <button
                       type="button"
@@ -803,7 +825,7 @@
                 <tr v-if="!products.products.length">
 
                   <td
-                    colspan="5"
+                    colspan="6"
                     class="p-12 text-center text-sm text-zinc-600"
                   >
                     No products found. Add your first product above.
@@ -820,7 +842,7 @@
         </div>
 
 
-        <!-- Mobile Product Cards -->
+        <!-- Mobile -->
 
         <div class="grid gap-3 md:hidden">
 
@@ -849,14 +871,19 @@
 
               <div class="min-w-0 flex-1">
 
-                <p
-                  class="truncate font-bold text-white"
-                >
+                <p class="truncate font-bold text-white">
                   {{ product.name }}
                 </p>
 
-                <p class="mt-1 text-xs text-zinc-600">
+                <p class="mt-1 text-xs text-zinc-500">
                   {{ product.category }}
+                </p>
+
+                <p
+                  v-if="product.subcategory"
+                  class="mt-0.5 truncate text-xs text-zinc-600"
+                >
+                  {{ product.subcategory }}
                 </p>
 
                 <p class="mt-2 text-sm font-black text-white">
@@ -868,13 +895,9 @@
             </div>
 
 
-            <div
-              class="mt-4 grid grid-cols-2 gap-2"
-            >
+            <div class="mt-4 grid grid-cols-2 gap-2">
 
-              <div
-                class="rounded-lg bg-zinc-950 p-3"
-              >
+              <div class="rounded-lg bg-zinc-950 p-3">
 
                 <p class="text-[10px] uppercase tracking-wider text-zinc-700">
                   Vehicles
@@ -887,9 +910,7 @@
               </div>
 
 
-              <div
-                class="min-w-0 rounded-lg bg-zinc-950 p-3"
-              >
+              <div class="min-w-0 rounded-lg bg-zinc-950 p-3">
 
                 <p class="text-[10px] uppercase tracking-wider text-zinc-700">
                   Status
@@ -906,9 +927,7 @@
             </div>
 
 
-            <div
-              class="mt-3 flex gap-2"
-            >
+            <div class="mt-3 flex gap-2">
 
               <button
                 type="button"
@@ -945,7 +964,6 @@
       </div>
 
     </section>
-
   </AdminShell>
 </template>
 
@@ -969,19 +987,220 @@ const saving = ref(false)
 const files = ref(null)
 const imageText = ref('')
 
+
+/*
+|--------------------------------------------------------------------------
+| SUBCATEGORIES
+|--------------------------------------------------------------------------
+|
+| These are used if your constants.js categories don't have subcategories
+| yet. You can later move these into constants.js.
+|
+*/
+
+const subcategoryMap = {
+  'LED Lights': [
+    {
+      id: 'headlights',
+      name: 'Headlights'
+    },
+    {
+      id: 'fog-lights',
+      name: 'Fog Lights'
+    },
+    {
+      id: 'indicators',
+      name: 'Indicators'
+    },
+    {
+      id: 'interior-led',
+      name: 'Interior LEDs'
+    },
+    // {
+    //   id: 'ambient-lighting',
+    //   name: 'Ambient Lighting'
+    // }
+  ],
+
+  'Exterior Accessories': [
+    {
+      id: 'top-covers',
+      name: 'Top Covers'
+    },
+    {
+      id: 'air-press',
+      name: 'Air Press'
+    },
+    {
+      id: 'side-mirrors',
+      name: 'Side Mirror Covers'
+    },
+    // {
+    //   id: 'mud-flaps',
+    //   name: 'Mud Flaps'
+    // },
+    // {
+    //   id: 'door-visors',
+    //   name: 'Door Visors'
+    // },
+    // {
+    //   id: 'number-plates',
+    //   name: 'Number Plates'
+    // }
+  ],
+
+  'Interior Accessories': [
+    {
+      id: 'dashboard',
+      name: 'Dashboard'
+    },
+    {
+      id: 'floor-mats',
+      name: 'Floor Mats'
+    },
+    {
+      id: 'sun-shades',
+      name: 'Sun Shades'
+    },
+    {
+      id: 'android',
+      name: 'Android / Multimedia'
+    },
+    {
+      id: 'steering',
+      name: 'Steering Accessories'
+    },
+    {
+      id: 'interior-lighting',
+      name: 'Interior Lighting'
+    },
+    // {
+    //   id: 'organizers',
+    //   name: 'Organizers'
+    // }
+  ],
+
+  'Car Care': [
+    {
+        id: 'car-wash',
+        name: 'Car Wash'
+      },
+      {
+        id: 'polish-wax',
+        name: 'Polish & Wax'
+      },
+      {
+        id: 'dashboard-care',
+        name: 'Dashboard Care'
+      },
+      {
+        id: 'interior-cleaning',
+        name: 'Interior Cleaning'
+      },
+      {
+        id: 'microfiber',
+        name: 'Microfiber & Towels'
+      },
+      {
+        id: 'key-cover',
+        name: 'Key Cover'
+      }
+  ],
+
+  'Security & Utility': [
+    {
+      id: 'car-security',
+      name: 'Car Security'
+    },
+    {
+      id: 'dash-cams',
+      name: 'Dash Cams'
+    },
+    {
+      id: 'parking-sensors',
+      name: 'Parking Sensors'
+    },
+    {
+      id: 'phone-holders',
+      name: 'Phone Holders'
+    },
+    {
+      id: 'chargers',
+      name: 'Chargers'
+    },
+    {
+      id: 'emergency',
+      name: 'Emergency & Utility'
+    }
+  ]
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| FORM
+|--------------------------------------------------------------------------
+*/
+
 const form = reactive(defaultProduct())
 
-const profit = computed(() =>
-  Number(form.sellingPrice || 0) -
-  Number(form.vendorPrice || 0)
-)
 
+/*
+|--------------------------------------------------------------------------
+| SELECTED CATEGORY
+|--------------------------------------------------------------------------
+*/
+
+const selectedCategoryObject = computed(() => {
+  const category = products.categories.find(
+    category => category.name === form.category
+  )
+
+  if (!category) {
+    return null
+  }
+
+  return {
+    ...category,
+
+    /*
+     * Use subcategories from constants.js if they exist.
+     * Otherwise use the local map above.
+     */
+    subcategories:
+      category.subcategories?.length
+        ? category.subcategories
+        : subcategoryMap[category.name] || []
+  }
+})
+
+
+/*
+|--------------------------------------------------------------------------
+| PROFIT
+|--------------------------------------------------------------------------
+*/
+
+const profit = computed(() => {
+  return (
+    Number(form.sellingPrice || 0) -
+    Number(form.vendorPrice || 0)
+  )
+})
+
+
+/*
+|--------------------------------------------------------------------------
+| DEFAULT PRODUCT
+|--------------------------------------------------------------------------
+*/
 
 function defaultProduct() {
   return {
     id: '',
     name: '',
     category: 'LED Lights',
+    subcategory: '',
     compatibleVehicles: [],
     description: '',
     sellingPrice: 0,
@@ -997,6 +1216,23 @@ function defaultProduct() {
 }
 
 
+/*
+|--------------------------------------------------------------------------
+| CATEGORY CHANGE
+|--------------------------------------------------------------------------
+*/
+
+function handleCategoryChange() {
+  form.subcategory = ''
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ASSIGN PRODUCT
+|--------------------------------------------------------------------------
+*/
+
 function assign(data) {
   Object.assign(
     form,
@@ -1007,6 +1243,8 @@ function assign(data) {
   form.compatibleVehicles = [
     ...(data.compatibleVehicles || [])
   ]
+
+  form.subcategory = data.subcategory || ''
 
   imageText.value =
     (form.images || []).join('\n')
@@ -1019,6 +1257,12 @@ function assign(data) {
   vehicleStore.years = []
 }
 
+
+/*
+|--------------------------------------------------------------------------
+| START NEW
+|--------------------------------------------------------------------------
+*/
 
 function startNew() {
   assign(defaultProduct())
@@ -1034,6 +1278,12 @@ function startNew() {
 }
 
 
+/*
+|--------------------------------------------------------------------------
+| EDIT
+|--------------------------------------------------------------------------
+*/
+
 function edit(product) {
   assign(product)
 
@@ -1048,10 +1298,20 @@ function edit(product) {
 }
 
 
-async function save() {
+/*
+|--------------------------------------------------------------------------
+| SAVE
+|--------------------------------------------------------------------------
+*/
 
+async function save() {
   if (!form.name.trim()) {
     alert('Please enter a product name.')
+    return
+  }
+
+  if (!form.category) {
+    alert('Please select a category.')
     return
   }
 
@@ -1064,12 +1324,26 @@ async function save() {
       .map(value => value.trim())
       .filter(Boolean)
 
+
     form.profit =
       Number(form.sellingPrice || 0) -
       Number(form.vendorPrice || 0)
 
-    const id = await products.saveProduct(form)
 
+    /*
+     * Save category + subcategory
+     */
+    const id =
+      await products.saveProduct({
+        ...form,
+        category: form.category,
+        subcategory: form.subcategory || ''
+      })
+
+
+    /*
+     * Upload images
+     */
     if (files.value?.length) {
 
       const urls =
@@ -1089,6 +1363,7 @@ async function save() {
 
     }
 
+
     await products.fetchAdminProducts()
 
     editing.value = false
@@ -1099,15 +1374,18 @@ async function save() {
     imageText.value = ''
 
   } finally {
-
     saving.value = false
-
   }
 }
 
 
-async function remove(id) {
+/*
+|--------------------------------------------------------------------------
+| DELETE
+|--------------------------------------------------------------------------
+*/
 
+async function remove(id) {
   if (!confirm('Delete this product?')) {
     return
   }
@@ -1115,12 +1393,16 @@ async function remove(id) {
   await products.deleteProduct(id)
 
   await products.fetchAdminProducts()
-
 }
 
 
-async function loadModels() {
+/*
+|--------------------------------------------------------------------------
+| VEHICLE SELECTORS
+|--------------------------------------------------------------------------
+*/
 
+async function loadModels() {
   selectedModel.value = ''
   selectedYear.value = ''
 
@@ -1129,23 +1411,25 @@ async function loadModels() {
   await vehicleStore.loadModels(
     selectedMake.value
   )
-
 }
 
 
 async function loadYears() {
-
   selectedYear.value = ''
 
   await vehicleStore.loadYears(
     selectedModel.value
   )
-
 }
 
 
-function addVehicle() {
+/*
+|--------------------------------------------------------------------------
+| ADD VEHICLE
+|--------------------------------------------------------------------------
+*/
 
+function addVehicle() {
   if (
     !selectedMake.value ||
     !selectedModel.value ||
@@ -1175,18 +1459,11 @@ function addVehicle() {
   }
 
   form.compatibleVehicles.push({
-
     id: vehicle.id,
-
     brand: vehicle.brand,
-
     model: vehicle.model,
-
     year: vehicle.year,
-
-    displayName:
-      vehicle.displayName
-
+    displayName: vehicle.displayName
   })
 
   selectedMake.value = ''
@@ -1195,29 +1472,32 @@ function addVehicle() {
 
   vehicleStore.models = []
   vehicleStore.years = []
-
 }
 
 
-function removeVehicle(id) {
+/*
+|--------------------------------------------------------------------------
+| REMOVE VEHICLE
+|--------------------------------------------------------------------------
+*/
 
+function removeVehicle(id) {
   form.compatibleVehicles =
     form.compatibleVehicles.filter(
       vehicle =>
         vehicle.id !== id
     )
-
 }
 
 
+/*
+|--------------------------------------------------------------------------
+| LOAD
+|--------------------------------------------------------------------------
+*/
+
 onMounted(async () => {
-
   await products.fetchAdminProducts()
-
-  await products.fetchCategories?.()
-
   await vehicleStore.loadMakes()
-
 })
 </script>
-```
