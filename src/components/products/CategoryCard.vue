@@ -30,11 +30,11 @@
       ></div>
 
       <!-- Arrow -->
-      <div
+      <!-- <div
         class="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-lg transition duration-300 group-hover:scale-110"
       >
         →
-      </div>
+      </div> -->
     </div>
 
     <!-- Content -->
