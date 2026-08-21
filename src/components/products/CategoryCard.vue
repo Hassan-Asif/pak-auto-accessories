@@ -51,12 +51,12 @@
         v-if="category.subcategories?.length"
         class="mt-1 text-xs text-zinc-500 sm:text-sm"
       >
-        {{ category.subcategories.length }}
-        {{
+        <!-- {{ category.subcategories.length }} -->
+        <!-- {{
           category.subcategories.length === 1
             ? 'subcategory'
             : 'subcategories'
-        }}
+        }} -->
       </p>
 
       <p

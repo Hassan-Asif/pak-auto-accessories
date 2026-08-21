@@ -1,55 +1,59 @@
 <template>
   <main class="min-h-screen bg-zinc-50 py-6 sm:py-10 lg:py-16">
-
     <div class="container-page">
 
       <!-- Header -->
-
-     <div class="mb-8 lg:mb-12">
-
-        <span class="inline-flex rounded-full bg-black px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white">
+      <div class="mb-8 lg:mb-12">
+        <span
+          class="inline-flex rounded-full bg-black px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-white sm:px-4 sm:py-2 sm:text-xs"
+        >
           Checkout
         </span>
 
-        <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-zinc-900">
+        <h1
+          class="mt-4 text-3xl font-black leading-tight text-zinc-900 sm:text-4xl lg:text-5xl"
+        >
           Complete Your Order
         </h1>
 
-        <p class="mt-3 text-base sm:text-lg text-zinc-600">
+        <p class="mt-3 text-base text-zinc-600 sm:text-lg">
           Fill in your delivery details and we'll confirm your order before payment.
         </p>
-
       </div>
 
       <form
-        class="grid gap-6 lg:gap-10 lg:grid-cols-[minmax(0,1fr)_380px]"
+        class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-10"
         @submit.prevent="placeOrder"
       >
 
-        <!-- LEFT -->
-
+        <!-- ================= LEFT ================= -->
         <section
-          class="rounded-2xl lg:rounded-3xl border border-zinc-300 bg-white p-4 sm:p-6 lg:p-8 shadow-sm text-black"
+          class="rounded-2xl border border-zinc-300 bg-white p-4 text-black shadow-sm sm:p-6 lg:rounded-3xl lg:p-8"
         >
-
-          <h2 class="mb-6 text-xl sm:text-2xl font-bold">
+          <h2 class="mb-6 text-xl font-bold sm:text-2xl">
             Customer Information
           </h2>
 
-          <div class="grid gap-4 sm:gap-6 sm:grid-cols-2">
+          <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
+            <!-- Full Name -->
             <div>
-              <label class="mb-2 block text-sm font-medium text-zinc-700">
+              <label
+                class="mb-2 block text-sm font-medium text-zinc-700"
+              >
                 Full Name
               </label>
 
               <input
                 v-model="form.customer.name"
+                name="name"
+                autocomplete="name"
                 required
                 class="field w-full bg-white text-black"
               >
             </div>
 
+            <!-- WhatsApp -->
             <div>
               <label class="label bg-white">
                 WhatsApp Number
@@ -57,11 +61,15 @@
 
               <input
                 v-model="form.customer.phone"
+                name="tel"
+                autocomplete="tel"
+                type="tel"
                 required
-                class="field bg-white text-black"
+                class="field w-full bg-white text-black"
               >
             </div>
 
+            <!-- City -->
             <div>
               <label class="label bg-white">
                 City
@@ -69,11 +77,14 @@
 
               <input
                 v-model="form.customer.city"
+                name="address-level2"
+                autocomplete="address-level2"
                 required
-                class="field bg-white text-black"
+                class="field w-full bg-white text-black"
               >
             </div>
 
+            <!-- Email -->
             <div>
               <label class="label bg-white">
                 Email
@@ -81,196 +92,150 @@
 
               <input
                 v-model="form.customer.email"
+                name="email"
+                autocomplete="email"
                 type="email"
-                class="field bg-white text-black"
+                class="field w-full bg-white text-black"
               >
             </div>
 
           </div>
 
+          <!-- Address -->
           <div class="mt-6">
-
             <label class="label bg-white">
               Delivery Address
             </label>
 
             <textarea
               v-model="form.customer.address"
+              name="street-address"
+              autocomplete="street-address"
               required
-              class="field w-full min-h-32 sm:min-h-36 bg-white text-black"
+              class="field min-h-32 w-full bg-white text-black sm:min-h-36"
             />
-
           </div>
 
+          <!-- Payment -->
           <div class="mt-6">
-
             <label class="label">
               Payment Method
             </label>
 
             <select
               v-model="form.paymentMethod"
-              class="field bg-white text-black"
+              class="field w-full bg-white text-black"
             >
               <option
                 v-for="method in paymentMethods"
                 :key="method"
+                :value="method"
               >
                 {{ method }}
               </option>
             </select>
-
           </div>
 
+          <!-- Notes -->
           <div class="mt-6">
-
             <label class="label">
               Order Notes
             </label>
 
             <textarea
               v-model="form.notes"
-              class="field w-full min-h-24 sm:min-h-28 bg-white text-black"
+              class="field min-h-24 w-full bg-white text-black sm:min-h-28"
               placeholder="Vehicle model, year, trim or special instructions."
             />
-
           </div>
-
         </section>
 
-        <!-- RIGHT -->
-
+        <!-- ================= RIGHT ================= -->
         <aside
-  class="min-w-0 h-fit rounded-2xl border border-zinc-300 bg-white p-4 shadow-sm sm:rounded-3xl sm:p-6 lg:sticky lg:top-24 lg:p-8"
->
-
-  <!-- Header -->
-
-  <h2 class="text-xl font-bold text-black sm:text-2xl">
-    Order Summary
-  </h2>
-
-
-  <!-- Items -->
-
-  <div class="mt-6 space-y-4">
-
-    <div
-      v-for="item in cart.items"
-      :key="item.id"
-      class="flex min-w-0 items-start gap-3 border-b border-zinc-100 pb-4 text-black"
-    >
-
-      <!-- Product Info -->
-
-      <div class="min-w-0 flex-1">
-
-        <p
-          class="break-words text-sm font-bold leading-5 text-zinc-900 sm:text-base"
+          class="min-w-0 h-fit rounded-2xl border border-zinc-300 bg-white p-4 shadow-sm sm:rounded-3xl sm:p-6 lg:sticky lg:top-24 lg:p-8"
         >
-          {{ item.name }}
-        </p>
+          <h2 class="text-xl font-bold text-black sm:text-2xl">
+            Order Summary
+          </h2>
 
-        <p class="mt-1 text-xs text-zinc-500 sm:text-sm">
-          Qty {{ item.quantity }}
-        </p>
+          <!-- Items -->
+          <div class="mt-6 space-y-4">
+            <div
+              v-for="item in cart.items"
+              :key="item.id"
+              class="flex min-w-0 items-start gap-3 border-b border-zinc-100 pb-4 text-black"
+            >
+              <div class="min-w-0 flex-1">
+                <p
+                  class="break-words text-sm font-bold leading-5 text-zinc-900 sm:text-base"
+                >
+                  {{ item.name }}
+                </p>
 
-      </div>
+                <p class="mt-1 text-xs text-zinc-500 sm:text-sm">
+                  Qty {{ item.quantity }}
+                </p>
+              </div>
 
+              <p
+                class="shrink-0 text-right text-sm font-bold text-zinc-900 sm:text-base"
+              >
+                Rs {{ (item.price * item.quantity).toLocaleString() }}
+              </p>
+            </div>
+          </div>
 
-      <!-- Item Price -->
+          <!-- Totals -->
+          <div
+            class="mt-6 space-y-4 border-t border-zinc-300 pt-5"
+          >
+            <div
+              class="flex items-center justify-between gap-4 text-sm sm:text-base"
+            >
+              <span class="text-zinc-500">
+                Subtotal
+              </span>
 
-      <p
-        class="shrink-0 text-right text-sm font-bold text-zinc-900 sm:text-base"
-      >
-        Rs {{ (item.price * item.quantity).toLocaleString() }}
-      </p>
+              <span class="shrink-0 font-medium text-black">
+                Rs {{ cart.subtotal.toLocaleString() }}
+              </span>
+            </div>
 
-    </div>
+            <div
+              class="flex items-center justify-between gap-4 border-t border-zinc-200 pt-4"
+            >
+              <span class="text-lg font-black text-black sm:text-xl">
+                Total
+              </span>
 
-  </div>
+              <span
+                class="shrink-0 text-lg font-black text-black sm:text-xl"
+              >
+                Rs {{ cart.subtotal.toLocaleString() }}
+              </span>
+            </div>
+          </div>
 
+          <!-- Checkout Button -->
+          <button
+            type="submit"
+            class="mt-6 w-full rounded-xl bg-black py-3.5 text-sm font-bold text-white transition hover:bg-zinc-800 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 sm:mt-8 sm:py-4 sm:text-base"
+            :disabled="saving || !cart.items.length"
+          >
+            {{ saving ? 'Placing Order...' : 'Place Order' }}
+          </button>
 
-  <!-- Totals -->
-
-  <div
-    class="mt-6 space-y-4 border-t border-zinc-300 pt-5"
-  >
-
-    <!-- Subtotal -->
-
-    <div
-      class="flex items-center justify-between gap-4 text-sm sm:text-base"
-    >
-
-      <span class="text-zinc-500">
-        Subtotal
-      </span>
-
-      <span class="shrink-0 font-medium text-black">
-        Rs {{ cart.subtotal.toLocaleString() }}
-      </span>
-
-    </div>
-
-
-    <!-- Total -->
-
-    <div
-      class="flex items-center justify-between gap-4 border-t border-zinc-200 pt-4"
-    >
-
-      <span class="text-lg font-black text-black sm:text-xl">
-        Total
-      </span>
-
-      <span
-        class="shrink-0 text-lg font-black text-black sm:text-xl"
-      >
-        Rs {{ cart.subtotal.toLocaleString() }}
-      </span>
-
-    </div>
-
-  </div>
-
-
-  <!-- Checkout Button -->
-
-  <button
-    class="mt-6 w-full rounded-xl bg-black py-3.5 text-sm font-bold text-white transition hover:bg-zinc-800 active:scale-[0.99] sm:mt-8 sm:py-4 sm:text-base"
-    :disabled="saving || !cart.items.length"
-  >
-    {{ saving ? 'Placing Order...' : 'Place Order' }}
-  </button>
-
-
-  <!-- Trust -->
-
-  <div
-    class="mt-5 rounded-2xl bg-zinc-50 p-4 text-xs leading-6 text-zinc-600 sm:mt-6 sm:p-5 sm:text-sm"
-  >
-
-    <p>
-      ✓ Order confirmation before payment
-    </p>
-
-    <p class="mt-1">
-      ✓ Secure checkout
-    </p>
-
-    <p class="mt-1">
-      ✓ Nationwide delivery
-    </p>
-
-  </div>
-
-</aside>
-
+          <!-- Trust -->
+          <div
+            class="mt-5 rounded-2xl bg-zinc-50 p-4 text-xs leading-6 text-zinc-600 sm:mt-6 sm:p-5 sm:text-sm"
+          >
+            <p>✓ Order confirmation before payment</p>
+            <p class="mt-1">✓ Secure checkout</p>
+            <p class="mt-1">✓ Nationwide delivery</p>
+          </div>
+        </aside>
       </form>
-
     </div>
-
   </main>
 </template>
 
@@ -284,17 +249,90 @@ import { useOrderStore } from '../stores/orders'
 const router = useRouter()
 const cart = useCartStore()
 const orders = useOrderStore()
+
 const saving = ref(false)
-const form = reactive({ customer: { name: '', phone: '', city: '', email: '', address: '' }, paymentMethod: 'COD', notes: '' })
+
+const form = reactive({
+  customer: {
+    name: '',
+    phone: '',
+    city: '',
+    email: '',
+    address: ''
+  },
+  paymentMethod: 'COD',
+  notes: ''
+})
 
 async function placeOrder() {
+  if (!cart.items.length) {
+    return
+  }
+
   saving.value = true
-  const orderId = await orders.createOrder({
-    ...form,
-    items: cart.items,
-    totals: { subtotal: cart.subtotal, delivery: 0, total: cart.subtotal }
-  })
-  cart.clear()
-  router.push(`/order-confirmation/${orderId}`)
+
+  try {
+    const orderId = await orders.createOrder({
+      ...form,
+
+      items: cart.items,
+
+      totals: {
+        subtotal: cart.subtotal,
+        delivery: 0,
+        total: cart.subtotal
+      }
+    })
+
+    cart.clear()
+
+    router.push(`/order-confirmation/${orderId}`)
+  } catch (error) {
+    console.error('Order placement failed:', error)
+
+    alert(
+      'We could not place your order right now. Please try again.'
+    )
+  } finally {
+    saving.value = false
+  }
 }
 </script>
+
+<style scoped>
+/*
+  Chrome / Edge autofill fix.
+  The browser normally applies a light blue background
+  when it automatically fills customer information.
+*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  background-color: #ffffff !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Keep normal fields white as well */
+input,
+textarea,
+select {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Autofilled fields remain white */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: #ffffff !important;
+}
+</style>

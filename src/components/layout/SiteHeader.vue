@@ -22,20 +22,16 @@
 
         <!-- LOGO -->
         <RouterLink
-          to="/"
-          :class="[
-            'shrink-0 text-2xl font-black tracking-tight transition-colors',
-            isTransparent
-              ? 'text-white'
-              : 'text-zinc-900'
-          ]"
-        >
-          Neon<span
-            :class="isTransparent ? 'text-white/60' : 'text-zinc-400'"
-          >
-            LEDs
-          </span>
-        </RouterLink>
+  to="/"
+  :class="[
+    'shrink-0 text-2xl font-black tracking-tight transition-colors',
+    isTransparent ? 'text-white' : 'text-zinc-900'
+  ]"
+>
+  Neon<span
+    :class="isTransparent ? 'text-white/60' : 'text-zinc-400'"
+  >LEDs</span>
+</RouterLink>
 
 
         <!-- DESKTOP NAVIGATION -->

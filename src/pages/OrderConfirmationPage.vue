@@ -10,11 +10,14 @@
 
         <!-- Success Icon -->
         <div
-          class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-black text-4xl"
-        >
-          ✔️
-        </div>
-
+  class="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-black p-2"
+>
+  <img
+    src="/logo.jpeg"
+    alt="Order confirmed"
+    class="h-full w-full object-contain"
+  >
+</div>
         <!-- Heading -->
         <p
           class="mt-7 text-xs font-bold uppercase tracking-[0.2em] text-zinc-500"
