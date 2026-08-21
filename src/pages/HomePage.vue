@@ -3,7 +3,7 @@
 
     <!-- ================= HERO ================= -->
 
-    <section class="bg-black">
+    <section class="bg-white">
 
       <!-- HERO IMAGE -->
       <div
@@ -106,7 +106,7 @@
 
       <!-- ================= VEHICLE SELECTOR ================= -->
 
-      <div class="container-page py-5 sm:py-7 lg:py-8">
+      <div class="container-page py-5 sm:py-7 lg:py-8 bg-white">
 
         <div
           class="mx-auto w-full max-w-5xl"
