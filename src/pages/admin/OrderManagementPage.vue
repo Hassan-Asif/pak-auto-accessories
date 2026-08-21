@@ -339,7 +339,7 @@
             <a
               :href="
                 supportMessage(
-                  `Hello ${order.customer?.name || ''}, we are checking vendor availability for your order.`
+                  `Hello ${order.customer?.name || ''}, we are checking the availability of this product.`
                 )
               "
               target="_blank"
@@ -420,7 +420,7 @@
                   v-if="selectedOrder.customer?.phone"
                   :href="
                     supportMessage(
-                      `Hello ${selectedOrder.customer?.name || ''}, we are checking the availability of your order.`
+                      `Hello ${selectedOrder.customer?.name || ''}, we are checking the availability of this product.`
                     )
                   "
                   target="_blank"
@@ -723,7 +723,7 @@
               v-if="selectedOrder"
               :href="
                 supportMessage(
-                  `Hello ${selectedOrder.customer?.name || ''}, we are checking vendor availability for your order.`
+                  `Hello ${selectedOrder.customer?.name || ''}, we are checking the availability of this product.`
                 )
               "
               target="_blank"
